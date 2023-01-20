@@ -42,7 +42,9 @@ class SigInScreen extends GetView<SigninController> {
                   Align(
                     alignment: Alignment.topLeft,
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.back();
+                      },
                       child: Icon(
                         Icons.arrow_back,
                         color: AppColors.white,
