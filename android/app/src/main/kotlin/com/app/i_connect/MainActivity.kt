@@ -1,4 +1,4 @@
-package com.example.i_connect
+package com.app.i_connect
 
 import io.flutter.embedding.android.FlutterActivity
 
