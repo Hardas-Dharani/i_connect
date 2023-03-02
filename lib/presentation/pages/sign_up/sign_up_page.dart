@@ -90,11 +90,16 @@ class SignUpScreen extends GetView<SignupController> {
                               //   return null;
                               // },
                               decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  hintStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w300),
-                                  hintText: "First name ")))),
+                                // floatingLabelAlignment:
+                                //     FloatingLabelAlignment.start,
+                                // floatingLabelBehavior:
+                                //     FloatingLabelBehavior.auto,
+                                // labelText: 'First Name',
+                                border: InputBorder.none,
+                                hintStyle: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                                hintText: "First name ",
+                              )))),
                   SizedBox(
                     height: Get.height * 0.02,
                   ),
