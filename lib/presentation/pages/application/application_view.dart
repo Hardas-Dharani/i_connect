@@ -11,7 +11,7 @@ import 'package:i_connect/presentation/tabs/home_tab/contact_list/contact_list_v
 import 'package:sizer/sizer.dart';
 
 import '../../../app/extensions/color.dart';
-import '../../../app/util/bottombar_item.dart';
+import '../../../app/util/avatar_bottom_text.dart';
 
 class ApplicationView extends GetView<ApplicationsController> {
   const ApplicationView({Key? key}) : super(key: key);

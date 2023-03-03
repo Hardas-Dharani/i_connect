@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:i_connect/app/config/app_colors.dart';
+import 'package:i_connect/app/util/avatar_bottom_text.dart';
 import 'package:i_connect/app/util/common_txt.dart';
+import 'package:i_connect/presentation/tabs/home_tab/contact_list/controller/contact_list_controller.dart';
 import 'package:sizer/sizer.dart';
 
-class ContactListView extends StatelessWidget {
+class ContactListView extends GetView<ContactListController> {
   const ContactListView({super.key});
 
   @override
@@ -64,21 +64,47 @@ class ContactListView extends StatelessWidget {
               ),
             ),
             SizedBox(height: Get.height * 0.03),
-            Row(children: [
-              Column(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: AppColors.lightBlack2,
-                    radius: 8.w,
-                    child: Icon(
-                      CupertinoIcons.person_add,
-                      color: AppColors.green.withOpacity(0.6),
-                      size: 9.w,
-                    ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                AvatarWithLabel(
+                  icons: CupertinoIcons.person_add,
+                  iconColor: AppColors.green.withOpacity(0.6),
+                  label: 'add individual',
+                  labelColor: AppColors.white.withOpacity(0.6),
+                  backgroundColor: AppColors.lightBlack2,
+                  circleSize: 8.w,
+                  iconSize: 9.w,
+                  press: () {},
+                ),
+                const SizedBox(width: 24),
+                AvatarWithLabel(
+                  icons: CupertinoIcons.person_add,
+                  iconColor: AppColors.green.withOpacity(0.6),
+                  label: 'add groups',
+                  labelColor: AppColors.white.withOpacity(0.6),
+                  backgroundColor: AppColors.lightBlack2,
+                  circleSize: 8.w,
+                  iconSize: 9.w,
+                  press: () {},
+                )
+              ],
+            ),
+            // Obx(() =>
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: controller.myList.length,
+              itemBuilder: (BuildContext context, int index) {
+                var item = controller.myList[index];
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage(item.imgURL ?? ''),
                   ),
-                ],
-              )
-            ]),
+                  title: Text(item.title ?? ''),
+                );
+              },
+            ),
+            //),
           ],
         ),
       ),
