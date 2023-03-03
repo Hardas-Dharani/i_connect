@@ -7,6 +7,8 @@ class SigninController extends GetxController {
   TextEditingController emailTxt = TextEditingController();
   TextEditingController passTxt = TextEditingController();
   final passwordVisible = true.obs;
+  final agree = false.obs;
+
   final formKey = GlobalKey<FormState>();
   AuthModal authModal = AuthModal();
   login() async {
@@ -18,5 +20,10 @@ class SigninController extends GetxController {
     } catch (e) {
       rethrow;
     }
+  }
+
+  oncheckchange(value) {
+    agree.value = value;
+    update();
   }
 }

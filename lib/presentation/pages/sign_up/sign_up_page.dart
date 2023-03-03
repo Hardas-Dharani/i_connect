@@ -89,16 +89,23 @@ class SignUpScreen extends GetView<SignupController> {
                               //   }
                               //   return null;
                               // },
-                              decoration: const InputDecoration(
-                                // floatingLabelAlignment:
-                                //     FloatingLabelAlignment.start,
-                                // floatingLabelBehavior:
-                                //     FloatingLabelBehavior.auto,
-                                // labelText: 'First Name',
-                                border: InputBorder.none,
-                                hintStyle: TextStyle(
+                              cursorColor: AppColors.darkGreyColor,
+                              decoration: InputDecoration(
+                                floatingLabelAlignment:
+                                    FloatingLabelAlignment.start,
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                labelText: 'First Name',
+                                floatingLabelStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.txtGrey),
+                                labelStyle: const TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w300),
-                                hintText: "First name ",
+                                border: InputBorder.none,
+                                // hintStyle: TextStyle(
+                                //     fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintText: "First name ",
                               )))),
                   SizedBox(
                     height: Get.height * 0.02,
@@ -120,12 +127,24 @@ class SignUpScreen extends GetView<SignupController> {
                               //   }
                               //   return null;
                               // },
-                              decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  hintStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w300),
-                                  hintText: "Last name ")))),
+                              cursorColor: AppColors.darkGreyColor,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                floatingLabelAlignment:
+                                    FloatingLabelAlignment.start,
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                labelText: 'Last name',
+                                floatingLabelStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.txtGrey),
+                                labelStyle: const TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintStyle: TextStyle(
+                                //     fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintText: "Last name ",
+                              )))),
                   SizedBox(
                     height: Get.height * 0.02,
                   ),
@@ -146,12 +165,24 @@ class SignUpScreen extends GetView<SignupController> {
                               //   }
                               //   return null;
                               // },
-                              decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  hintStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w300),
-                                  hintText: "Email ")))),
+                              cursorColor: AppColors.darkGreyColor,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                floatingLabelAlignment:
+                                    FloatingLabelAlignment.start,
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                labelText: 'Email',
+                                floatingLabelStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.txtGrey),
+                                labelStyle: const TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintStyle: TextStyle(
+                                //     fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintText: "Email ",
+                              )))),
                   SizedBox(
                     height: Get.height * 0.02,
                   ),
@@ -172,12 +203,24 @@ class SignUpScreen extends GetView<SignupController> {
                               //   }
                               //   return null;
                               // },
-                              decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  hintStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w300),
-                                  hintText: "Date of Birth ")))),
+                              cursorColor: AppColors.darkGreyColor,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                floatingLabelAlignment:
+                                    FloatingLabelAlignment.start,
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                labelText: 'Date of Birth',
+                                floatingLabelStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.txtGrey),
+                                labelStyle: const TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintStyle: TextStyle(
+                                //     fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintText: "Date of Birth ",
+                              )))),
                   SizedBox(
                     height: Get.height * 0.02,
                   ),
@@ -192,18 +235,31 @@ class SignUpScreen extends GetView<SignupController> {
                           child: TextFormField(
                               controller: controller.emailTxt,
                               readOnly: false,
+
                               // validator: (value) {
                               //   if (value!.isEmpty) {
                               //     return 'Enter email';
                               //   }
                               //   return null;
                               // },
-                              decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  hintStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w300),
-                                  hintText: "Phone ")))),
+                              cursorColor: AppColors.darkGreyColor,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                floatingLabelAlignment:
+                                    FloatingLabelAlignment.start,
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                labelText: 'Phone',
+                                floatingLabelStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.txtGrey),
+                                labelStyle: const TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintStyle: TextStyle(
+                                //     fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintText: "Phone ",
+                              )))),
                   SizedBox(
                     height: Get.height * 0.02,
                   ),

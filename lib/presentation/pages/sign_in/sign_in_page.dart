@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:i_connect/app/util/check_box.dart';
 import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
 import 'package:sizer/sizer.dart';
 
@@ -92,12 +93,24 @@ class SigInScreen extends GetView<SigninController> {
                               //   }
                               //   return null;
                               // },
-                              decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  hintStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w300),
-                                  hintText: "Email ")))),
+                              cursorColor: AppColors.darkGreyColor,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                floatingLabelAlignment:
+                                    FloatingLabelAlignment.start,
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                labelText: 'Email',
+                                floatingLabelStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.txtGrey),
+                                labelStyle: const TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintStyle: TextStyle(
+                                //     fontSize: 14, fontWeight: FontWeight.w300),
+                                // hintText: "Email ",
+                              )))),
                   SizedBox(
                     height: Get.height * 0.02,
                   ),
@@ -119,27 +132,51 @@ class SigInScreen extends GetView<SigninController> {
                                   }
                                   return null;
                                 },
+                                cursorColor: AppColors.darkGreyColor,
                                 obscureText: controller.passwordVisible.value,
                                 decoration: InputDecoration(
-                                    suffixIcon: IconButton(
-                                      icon: !controller.passwordVisible.value
-                                          ? const Icon(Icons.visibility)
-                                          : const Icon(Icons.visibility_off),
-                                      onPressed: () {
-                                        controller.passwordVisible.value =
-                                            !controller.passwordVisible.value;
+                                  suffixIcon: IconButton(
+                                    icon: !controller.passwordVisible.value
+                                        ? const Icon(Icons.visibility)
+                                        : const Icon(Icons.visibility_off),
+                                    onPressed: () {
+                                      controller.passwordVisible.value =
+                                          !controller.passwordVisible.value;
 
-                                        // Update the state i.e. toogle the state of passwordVisible variable
-                                      },
-                                    ),
-                                    border: InputBorder.none,
-                                    hintStyle: const TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w300),
-                                    hintText: "Password ")))),
+                                      // Update the state i.e. toogle the state of passwordVisible variable
+                                    },
+                                  ),
+                                  border: InputBorder.none,
+                                  floatingLabelAlignment:
+                                      FloatingLabelAlignment.start,
+                                  floatingLabelBehavior:
+                                      FloatingLabelBehavior.auto,
+                                  labelText: 'Password',
+                                  floatingLabelStyle: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300,
+                                      color: AppColors.txtGrey),
+                                  labelStyle: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300),
+                                  // hintStyle: const TextStyle(
+                                  //     fontSize: 14,
+                                  //     fontWeight: FontWeight.w300),
+                                  // hintText: "Password ",
+                                )))),
                   ),
                   SizedBox(
                     height: Get.height * 0.02,
+                  ),
+                  Obx(
+                    () => TOCCheckBox(
+                      label: 'TOC agreement',
+                      labelFontSize: 14,
+                      value: controller.agree.value,
+                      onchanged: (value) {
+                        controller.oncheckchange(value);
+                      },
+                    ),
                   ),
                   SizedBox(
                     height: Get.height * 0.05,

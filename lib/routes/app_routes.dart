@@ -6,4 +6,6 @@ class Routes {
   static String get splashScreen => '/splashScreen';
   static String get stats => '/statsScreen';
   static String get statsTable => '/statsTableScreen';
+  static String get profileScreen => '/profileScreen';
+  static String get applicationScreen => '/applicationScreen';
 }
