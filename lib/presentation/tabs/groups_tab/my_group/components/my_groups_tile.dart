@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:i_connect/app/config/app_colors.dart';
 import 'package:i_connect/app/util/common_txt.dart';
 
-class ConnectionTile extends StatelessWidget {
-  const ConnectionTile({
+class MyGroupsTile extends StatelessWidget {
+  const MyGroupsTile({
     required this.bgColor,
     required this.label,
-    this.subtitle,
+    required this.subtitle,
     required this.trailing,
     required this.leading,
     this.ontap,
@@ -14,7 +14,7 @@ class ConnectionTile extends StatelessWidget {
   }) : super(key: key);
   final Color bgColor;
   final String label;
-  final Widget? subtitle;
+  final String subtitle;
   final Widget? trailing;
   final Widget leading;
   final Function()? ontap;
@@ -47,7 +47,12 @@ class ConnectionTile extends StatelessWidget {
                     weight: FontWeight.w600,
                   ),
                   const SizedBox(height: 6),
-                  subtitle ?? Container(),
+                  CommonText(
+                    text: subtitle,
+                    fontSize: 14,
+                    color: AppColors.white.withOpacity(0.7),
+                    weight: FontWeight.w300,
+                  ),
                 ],
               ),
             ),

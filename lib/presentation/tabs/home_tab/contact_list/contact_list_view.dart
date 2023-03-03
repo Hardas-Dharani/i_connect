@@ -1,16 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:i_connect/app/config/app_colors.dart';
+import 'package:i_connect/app/util/common_appbar.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/avatar_bottom_text.dart';
 import 'package:i_connect/app/util/common_txt.dart';
-import 'package:i_connect/presentation/tabs/home_tab/lets_connect/components/connnection_tile.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/stacked_group_avatar.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/controller/contact_list_controller.dart';
 import 'package:i_connect/presentation/tabs/home_tab/lets_connect/lets_connect_view.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../routes/app_routes.dart';
+import 'components/contacts_tile.dart';
 
 class ContactListView extends GetView<ContactListController> {
   const ContactListView({super.key});
@@ -24,50 +26,11 @@ class ContactListView extends GetView<ContactListController> {
       child: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Column(
-          mainAxisSize: MainAxisSize.max,
           children: [
-            Container(
-              height: Get.height * 0.14,
-              alignment: Alignment.topCenter,
-              decoration: BoxDecoration(
-                  color: AppColors.lightBlack2,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(33),
-                    bottomRight: Radius.circular(33),
-                  ),
-                  boxShadow: [
-                    BoxShadow(color: AppColors.lightBlack, blurRadius: 2),
-                    BoxShadow(color: AppColors.lightBlack, blurRadius: 2)
-                  ]),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 0, vertical: 12),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(CupertinoIcons.back),
-                        color: AppColors.white,
-                      ),
-                      CommonText(
-                        text: 'Contact List',
-                        fontSize: 18,
-                        weight: FontWeight.w500,
-                        color: AppColors.white,
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(CupertinoIcons.home),
-                        color: AppColors.white,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            CommonAppBar(
+              title: 'Contact List',
+              backIconTap: () {},
+              homeIconTap: () {},
             ),
             SizedBox(height: Get.height * 0.04),
             Row(
@@ -85,7 +48,7 @@ class ContactListView extends GetView<ContactListController> {
                 ),
                 const SizedBox(width: 24),
                 AvatarWithLabel(
-                  icons: CupertinoIcons.person_add,
+                  icons: FontAwesomeIcons.peopleGroup,
                   iconColor: AppColors.green.withOpacity(0.6),
                   label: 'add groups',
                   labelColor: AppColors.white.withOpacity(0.6),

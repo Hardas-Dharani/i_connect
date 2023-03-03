@@ -9,7 +9,9 @@ import 'package:i_connect/temp_data/contact_list_data.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../app/config/app_colors.dart';
+import '../../../../app/util/common_appbar.dart';
 import '../../../../app/util/common_txt.dart';
+import '../../../../app/util/gradient_button.dart';
 import 'components/connnection_tile.dart';
 import 'controller/lets_connect_controller.dart';
 
@@ -30,50 +32,12 @@ class LetsConnectView extends GetView<LetsConnectController> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                height: Get.height * 0.14,
-                alignment: Alignment.topCenter,
-                decoration: BoxDecoration(
-                    color: AppColors.lightBlack2,
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(33),
-                      bottomRight: Radius.circular(33),
-                    ),
-                    boxShadow: [
-                      BoxShadow(color: AppColors.lightBlack, blurRadius: 2),
-                      BoxShadow(color: AppColors.lightBlack, blurRadius: 2)
-                    ]),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 0, vertical: 12),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            Get.back();
-                          },
-                          icon: const Icon(CupertinoIcons.back),
-                          color: AppColors.white,
-                        ),
-                        CommonText(
-                          text: 'Lets Connct',
-                          fontSize: 18,
-                          weight: FontWeight.w500,
-                          color: AppColors.white,
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(CupertinoIcons.home),
-                          color: AppColors.white,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+              CommonAppBar(
+                title: 'Let\'s Connct',
+                backIconTap: () {
+                  Get.back();
+                },
+                homeIconTap: () {},
               ),
               SizedBox(height: Get.height * 0.04),
               Center(
@@ -119,32 +83,88 @@ class LetsConnectView extends GetView<LetsConnectController> {
                 ),
               ),
               SizedBox(height: Get.height * 0.03),
-              Obx(
-                () => ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  itemCount: controller.myList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    var item = controller.myList[index];
-                    return ContactsTile(
-                      leading: StackedAvatras(imgURL: item.imgURL ?? ""),
-                      bgColor: index % 2 == 0
-                          ? AppColors.lightBlack2
-                          : Colors.transparent,
-                      label: item.title ?? "",
-                      subtitle: CommonText(
-                        text: item.subtitle ?? '',
-                        fontSize: 14,
-                        color: AppColors.white.withOpacity(0.6),
-                        weight: FontWeight.w300,
-                      ),
-                      time: '',
-                    );
-                  },
+              SizedBox(
+                height: Get.height * 0.38,
+                child: Obx(
+                  () => ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    itemCount: controller.myList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      var item = controller.myList[index];
+                      return ConnectionTile(
+                        leading: StackedAvatras(imgURL: item.imgURL ?? ""),
+                        bgColor: index % 2 == 0
+                            ? AppColors.lightBlack2
+                            : Colors.transparent,
+                        label: item.title ?? "",
+                        subtitle: CommonText(
+                          text: item.subtitle ?? '',
+                          fontSize: 14,
+                          color: AppColors.white.withOpacity(0.6),
+                          weight: FontWeight.w300,
+                        ),
+                        trailing: Icon(
+                          FontAwesomeIcons.infinity,
+                          color: AppColors.green,
+                          size: 22,
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
+              SizedBox(height: Get.height * 0.03),
+              args.contactListArguements!.isGroup == true
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomGradientButton(
+                            onPressed: () {},
+                            width: Get.width * 0.30,
+                            height: 46,
+                            borderRadius: BorderRadius.circular(7),
+                            child: CommonText(
+                              text: 'Connect',
+                              color: AppColors.lightBlack,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              CommonText(
+                                text: 'Connect Individiually',
+                                color: AppColors.white,
+                                fontSize: 16,
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  CupertinoIcons.chevron_down,
+                                  color: AppColors.white,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  : CustomGradientButton(
+                      onPressed: () {},
+                      width: Get.width * 0.40,
+                      height: 46,
+                      borderRadius: BorderRadius.circular(7),
+                      child: CommonText(
+                        text: 'Connect',
+                        color: AppColors.lightBlack,
+                        fontSize: 16,
+                      ),
+                    )
             ],
           ),
         ),

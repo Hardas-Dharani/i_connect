@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:i_connect/app/config/app_colors.dart';
 import 'package:i_connect/app/util/common_txt.dart';
 
-class ConnectionTile extends StatelessWidget {
-  const ConnectionTile({
+class ContactsTile extends StatelessWidget {
+  const ContactsTile({
     required this.bgColor,
     required this.label,
     this.subtitle,
-    required this.trailing,
+    required this.time,
     required this.leading,
     this.ontap,
     Key? key,
@@ -15,7 +15,7 @@ class ConnectionTile extends StatelessWidget {
   final Color bgColor;
   final String label;
   final Widget? subtitle;
-  final Widget? trailing;
+  final String? time;
   final Widget leading;
   final Function()? ontap;
   @override
@@ -52,7 +52,12 @@ class ConnectionTile extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            trailing ?? Container(),
+            CommonText(
+              text: time ?? '',
+              fontSize: 14,
+              color: AppColors.white.withOpacity(0.6),
+              weight: FontWeight.w600,
+            ) // trailing ?? Container(),
           ],
         ),
       ),

@@ -5,6 +5,7 @@ import 'package:i_connect/app/util/common_txt.dart';
 import 'package:i_connect/app/util/custom_bot_navbar.dart';
 import 'package:i_connect/app/util/scaffold_widget.dart';
 import 'package:i_connect/presentation/pages/application/controller/application_controller.dart';
+import 'package:i_connect/presentation/tabs/groups_tab/my_group/my_groups_view.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/contact_list_view.dart';
 
 class ApplicationView extends GetView<ApplicationsController> {
@@ -40,9 +41,7 @@ class ApplicationView extends GetView<ApplicationsController> {
               },
               children: [
                 const ContactListView(),
-                Center(
-                    child:
-                        CommonText(text: 'my groups', color: AppColors.white)),
+                const MyGroupsView(),
                 Center(
                     child: CommonText(text: 'search', color: AppColors.white)),
                 Center(
