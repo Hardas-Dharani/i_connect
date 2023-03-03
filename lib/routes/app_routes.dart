@@ -8,4 +8,5 @@ class Routes {
   static String get statsTable => '/statsTableScreen';
   static String get profileScreen => '/profileScreen';
   static String get applicationScreen => '/applicationScreen';
+  static String get letsConnectScreen => '/letsConnectScreen';
 }

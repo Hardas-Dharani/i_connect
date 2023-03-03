@@ -2,10 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:i_connect/app/config/app_colors.dart';
-import 'package:i_connect/app/util/avatar_bottom_text.dart';
+import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/avatar_bottom_text.dart';
 import 'package:i_connect/app/util/common_txt.dart';
+import 'package:i_connect/presentation/tabs/home_tab/lets_connect/components/connnection_tile.dart';
+import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/stacked_group_avatar.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/controller/contact_list_controller.dart';
+import 'package:i_connect/presentation/tabs/home_tab/lets_connect/lets_connect_view.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../../../routes/app_routes.dart';
 
 class ContactListView extends GetView<ContactListController> {
   const ContactListView({super.key});
@@ -19,6 +24,7 @@ class ContactListView extends GetView<ContactListController> {
       child: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           children: [
             Container(
               height: Get.height * 0.14,
@@ -63,7 +69,7 @@ class ContactListView extends GetView<ContactListController> {
                 ),
               ),
             ),
-            SizedBox(height: Get.height * 0.03),
+            SizedBox(height: Get.height * 0.04),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -90,21 +96,46 @@ class ContactListView extends GetView<ContactListController> {
                 )
               ],
             ),
-            // Obx(() =>
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: controller.myList.length,
-              itemBuilder: (BuildContext context, int index) {
-                var item = controller.myList[index];
-                return ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage(item.imgURL ?? ''),
-                  ),
-                  title: Text(item.title ?? ''),
-                );
-              },
+            SizedBox(height: Get.height * 0.03),
+            Obx(
+              () => ListView.builder(
+                scrollDirection: Axis.vertical,
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                physics: const AlwaysScrollableScrollPhysics(),
+                itemCount: controller.myList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  var item = controller.myList[index];
+                  return ContactsTile(
+                    ontap: () {
+                      Get.toNamed(Routes.letsConnectScreen,
+                          arguments: ConnectionArguements(
+                            contactListArguements: item,
+                          ));
+                    },
+                    leading: item.isGroup == false
+                        ? CircleAvatar(
+                            radius: 6.w,
+                            backgroundImage: AssetImage(item.imgURL ?? ""),
+                          )
+                        : StackedAvatras(imgURL: item.imgURL ?? ""),
+                    bgColor: index % 2 == 0
+                        ? AppColors.lightBlack2
+                        : Colors.transparent,
+                    label: item.title ?? "",
+                    subtitle: item.isGroup == true
+                        ? CommonText(
+                            text: item.subtitle ?? '',
+                            fontSize: 14,
+                            color: AppColors.white.withOpacity(0.6),
+                            weight: FontWeight.w300,
+                          )
+                        : Container(),
+                    time: item.trailing ?? "",
+                  );
+                },
+              ),
             ),
-            //),
           ],
         ),
       ),

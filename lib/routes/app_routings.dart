@@ -5,6 +5,8 @@ import 'package:i_connect/presentation/pages/profile/profile_page.dart';
 import 'package:i_connect/presentation/pages/sign_up/binding/sign_up_binding.dart';
 import 'package:i_connect/presentation/pages/sign_up/sign_up_page.dart';
 import 'package:i_connect/presentation/pages/splash/start_page.dart';
+import 'package:i_connect/presentation/tabs/home_tab/lets_connect/bindings/lets_connect_binding.dart';
+import 'package:i_connect/presentation/tabs/home_tab/lets_connect/lets_connect_view.dart';
 
 import '../presentation/pages/profile/binding/profile_binding.dart';
 import '../presentation/pages/sign_in/binding/sign_in_binding.dart';
@@ -42,6 +44,11 @@ class RoutingModule {
       name: Routes.applicationScreen,
       page: () => const ApplicationView(),
       binding: ApplicationsBinding(),
+    ),
+    GetPage(
+      name: Routes.letsConnectScreen,
+      page: () => LetsConnectView(),
+      binding: LetsConnectBinding(),
     ),
   ];
 }
