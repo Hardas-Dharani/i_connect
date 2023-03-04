@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:i_connect/presentation/tabs/home_tab/connect_ndividual/components/individual_tile.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/contacts_tile.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../app/config/app_colors.dart';
@@ -68,27 +69,41 @@ class ConnectIndividuallyView extends GetView<ConnectIndividualController> {
                     itemCount: controller.myList.length,
                     itemBuilder: (BuildContext context, int index) {
                       var item = controller.myList[index];
-                      return ListTile(
-                        tileColor: index % 2 == 0
+                      return IndividualConnTile(
+                        bgColor: index % 2 == 0
                             ? AppColors.lightBlack2
                             : Colors.transparent,
+                        label: item.title ?? '',
+                        trailing: SvgPicture.asset(
+                          Utils.getSvgFilePath('icon-connect'),
+                          color: AppColors.white.withOpacity(0.6),
+                        ),
                         leading: CircleAvatar(
                           radius: 6.w,
                           backgroundImage: AssetImage(item.imgURL ?? ""),
                         ),
-                        title: CommonText(
-                          text: item.title ?? '',
-                          fontSize: 16,
-                          color: AppColors.white,
-                          weight: FontWeight.w600,
-                        ),
-                        trailing: SvgPicture.asset(
-                          Utils.getSvgFilePath(
-                            'icon-connect',
-                          ),
-                          color: AppColors.white.withOpacity(0.6),
-                        ),
                       );
+                      //  ListTile(
+                      //   tileColor: index % 2 == 0
+                      //       ? AppColors.lightBlack2
+                      //       : Colors.transparent,
+                      //   leading: CircleAvatar(
+                      //     radius: 6.w,
+                      //     backgroundImage: AssetImage(item.imgURL ?? ""),
+                      //   ),
+                      //   title: CommonText(
+                      //     text: item.title ?? '',
+                      //     fontSize: 16,
+                      //     color: AppColors.white,
+                      //     weight: FontWeight.w600,
+                      //   ),
+                      //   trailing: SvgPicture.asset(
+                      //     Utils.getSvgFilePath(
+                      //       'icon-connect',
+                      //     ),
+                      //     color: AppColors.white.withOpacity(0.6),
+                      //   ),
+                      // );
                       // ContactsTile(
 
                       //   leading: CircleAvatar(

@@ -41,4 +41,19 @@ List<ConnnectionData> connectionDAta = [
     title: '22 July 2022 ',
     subtitle: '02:00 pm',
   ),
+  ConnnectionData(
+    imgURL: 'assets/images/i-connect-icon.png',
+    title: '22 July 2022 ',
+    subtitle: '02:00 pm',
+  ),
+  ConnnectionData(
+    imgURL: 'assets/images/i-connect-icon.png',
+    title: '22 July 2022 ',
+    subtitle: '02:00 pm',
+  ),
+  ConnnectionData(
+    imgURL: 'assets/images/i-connect-icon.png',
+    title: '22 July 2022 ',
+    subtitle: '02:00 pm',
+  ),
 ];

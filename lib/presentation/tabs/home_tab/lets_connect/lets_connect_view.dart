@@ -89,7 +89,6 @@ class LetsConnectView extends GetView<LetsConnectController> {
                 height: 42.h,
                 child: Obx(
                   () => ListView.builder(
-                    scrollDirection: Axis.vertical,
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     physics: const AlwaysScrollableScrollPhysics(),

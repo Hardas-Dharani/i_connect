@@ -31,70 +31,75 @@ class SearchView extends GetView<SearchViewController> {
               ),
               SizedBox(height: Get.height * 0.04),
               Container(
+                margin: const EdgeInsets.symmetric(horizontal: 24),
+                padding: const EdgeInsets.only(left: 15, right: 15),
                 decoration: BoxDecoration(
                   color: AppColors.lightBlack2,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15),
-                  child: TextFormField(
-                    controller: controller.searchController,
-                    readOnly: false,
-                    // validator: (value) {
-                    //   if (value!.isEmpty) {
-                    //     return 'Enter Password';
-                    //   }
-                    //   return null;
-                    // },
-                    cursorColor: AppColors.green,
-                    decoration: InputDecoration(
-                      suffixIcon: IconButton(
-                        icon: const Icon(Icons.search),
-                        onPressed: () {},
+                child: TextFormField(
+                  controller: controller.searchController,
+                  readOnly: false,
+                  // validator: (value) {
+                  //   if (value!.isEmpty) {
+                  //     return 'Enter Password';
+                  //   }
+                  //   return null;
+                  // },
+                  cursorColor: AppColors.green,
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        Icons.search,
+                        color: AppColors.green,
                       ),
-                      border: InputBorder.none,
-                      hintStyle: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                          color: AppColors.green.withOpacity(0.7)),
-                      hintText: "Search ",
+                      onPressed: () {},
                     ),
+                    border: InputBorder.none,
+                    hintStyle: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                        color: AppColors.green.withOpacity(0.7)),
+                    hintText: "Search ",
                   ),
                 ),
               ),
-              SizedBox(height: Get.height * 0.03),
+              SizedBox(height: Get.height * 0.05),
               Obx(
-                () => ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  itemCount: controller.myList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    var item = controller.myList[index];
-                    return ContactsTile(
-                      ontap: () {},
-                      leading: item.isGroup == false
-                          ? CircleAvatar(
-                              radius: 6.w,
-                              backgroundImage: AssetImage(item.imgURL ?? ""),
-                            )
-                          : StackedAvatras(imgURL: item.imgURL ?? ""),
-                      bgColor: index % 2 == 0
-                          ? AppColors.lightBlack2
-                          : Colors.transparent,
-                      label: item.title ?? "",
-                      subtitle: item.isGroup == true
-                          ? CommonText(
-                              text: item.subtitle ?? '',
-                              fontSize: 14,
-                              color: AppColors.white.withOpacity(0.6),
-                              weight: FontWeight.w300,
-                            )
-                          : Container(),
-                      time: item.trailing ?? "",
-                    );
-                  },
+                () => SizedBox(
+                  height: 65.h,
+                  child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    itemCount: controller.myList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      var item = controller.myList[index];
+                      return ContactsTile(
+                        ontap: () {},
+                        leading: item.isGroup == false
+                            ? CircleAvatar(
+                                radius: 6.w,
+                                backgroundImage: AssetImage(item.imgURL ?? ""),
+                              )
+                            : StackedAvatras(imgURL: item.imgURL ?? ""),
+                        bgColor: index % 2 == 0
+                            ? AppColors.lightBlack2
+                            : Colors.transparent,
+                        label: item.title ?? "",
+                        subtitle: item.isGroup == true
+                            ? CommonText(
+                                text: item.subtitle ?? '',
+                                fontSize: 14,
+                                color: AppColors.white.withOpacity(0.6),
+                                weight: FontWeight.w300,
+                              )
+                            : Container(),
+                        time: item.trailing ?? "",
+                      );
+                    },
+                  ),
                 ),
               ),
             ],

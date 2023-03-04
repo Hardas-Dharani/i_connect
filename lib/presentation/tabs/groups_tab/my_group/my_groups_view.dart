@@ -30,35 +30,26 @@ class MyGroupsView extends GetView<MyGroupsController> {
               backIconTap: () {},
               homeIconTap: () {},
             ),
-            SizedBox(height: Get.height * 0.04),
+            SizedBox(height: Get.height * 0.03),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               alignment: Alignment.centerLeft,
               child: AvatarWithLabel(
                 avatar: CircleAvatar(
-                  backgroundColor: AppColors.lightBlack2,
-                  radius: 8.w,
-                  child:
-                      //   SvgPicture.asset(Utils.getSvgFilePath(svgPath ?? ''))
-                      Icon(
-                    CupertinoIcons.person_add,
-                    color: AppColors.green.withOpacity(0.6),
-                    size: 9.w,
-                  ),
-                ),
-                label: 'add individual',
+                    backgroundColor: AppColors.lightBlack2,
+                    radius: 8.w,
+                    child: SvgPicture.asset(
+                      Utils.getSvgFilePath('icon-group-add'),
+                      color: AppColors.green.withOpacity(0.6),
+                    )),
+                label: 'add group',
                 labelColor: AppColors.white.withOpacity(0.6),
                 press: () {},
-                // icons  : FontAwesomeIcons.peopleGroup,
-                //   iconColor: AppColors.green,
-                //   label: 'Add Group',
-                //   labelColor: AppColors.white.withOpacity(0.7),
-                //   backgroundColor: AppColors.lightBlack2,
               ),
             ),
-            SizedBox(height: Get.height * 0.04),
+            SizedBox(height: Get.height * 0.02),
             SizedBox(
-              height: Get.height * 0.8,
+              height: 61.h,
               child: Obx(
                 () => ListView.builder(
                   scrollDirection: Axis.vertical,
