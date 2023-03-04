@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:i_connect/app/util/util.dart';
 
 import '../config/app_colors.dart';
 import 'common_txt.dart';
@@ -19,6 +21,7 @@ class CommonAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // padding: ,
       height: Get.height * 0.14,
       alignment: Alignment.topCenter,
       decoration: BoxDecoration(
@@ -40,7 +43,7 @@ class CommonAppBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                onPressed:backIconTap, //() {},
+                onPressed: backIconTap,
                 icon: const Icon(CupertinoIcons.back),
                 color: AppColors.white,
               ),
@@ -50,8 +53,12 @@ class CommonAppBar extends StatelessWidget {
                 weight: FontWeight.w500,
                 color: AppColors.white,
               ),
+              // SvgPicture.asset(
+              //   Utils.getSvgFilePath("icon-home"),
+              //   color: AppColors.white,
+              // ),
               IconButton(
-                onPressed: homeIconTap,//() {},
+                onPressed: homeIconTap, //() {},
                 icon: const Icon(CupertinoIcons.home),
                 color: AppColors.white,
               ),

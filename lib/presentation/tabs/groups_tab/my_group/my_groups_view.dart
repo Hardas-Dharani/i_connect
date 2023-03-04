@@ -1,12 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:i_connect/app/config/app_colors.dart';
 import 'package:i_connect/presentation/tabs/groups_tab/my_group/components/my_groups_tile.dart';
 import 'package:i_connect/presentation/tabs/groups_tab/my_group/controller/my_groups_controller.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/avatar_bottom_text.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../app/util/common_appbar.dart';
+import '../../../../app/util/util.dart';
 import '../../home_tab/contact_list/components/stacked_group_avatar.dart';
 
 class MyGroupsView extends GetView<MyGroupsController> {
@@ -31,11 +35,25 @@ class MyGroupsView extends GetView<MyGroupsController> {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               alignment: Alignment.centerLeft,
               child: AvatarWithLabel(
-                icons: FontAwesomeIcons.peopleGroup,
-                iconColor: AppColors.green,
-                label: 'Add Group',
-                labelColor: AppColors.white.withOpacity(0.7),
-                backgroundColor: AppColors.lightBlack2,
+                avatar: CircleAvatar(
+                  backgroundColor: AppColors.lightBlack2,
+                  radius: 8.w,
+                  child:
+                      //   SvgPicture.asset(Utils.getSvgFilePath(svgPath ?? ''))
+                      Icon(
+                    CupertinoIcons.person_add,
+                    color: AppColors.green.withOpacity(0.6),
+                    size: 9.w,
+                  ),
+                ),
+                label: 'add individual',
+                labelColor: AppColors.white.withOpacity(0.6),
+                press: () {},
+                // icons  : FontAwesomeIcons.peopleGroup,
+                //   iconColor: AppColors.green,
+                //   label: 'Add Group',
+                //   labelColor: AppColors.white.withOpacity(0.7),
+                //   backgroundColor: AppColors.lightBlack2,
               ),
             ),
             SizedBox(height: Get.height * 0.04),
@@ -57,10 +75,11 @@ class MyGroupsView extends GetView<MyGroupsController> {
                           : Colors.transparent,
                       label: item.title ?? "",
                       subtitle: item.subtitle ?? '',
-                      trailing: Icon(
-                        FontAwesomeIcons.infinity,
-                        color: AppColors.green,
-                        size: 22,
+                      trailing: SvgPicture.asset(
+                        Utils.getSvgFilePath(
+                          'icon-connect',
+                        ),
+                        color: AppColors.white.withOpacity(0.6),
                       ),
                       ontap: () {},
                     );

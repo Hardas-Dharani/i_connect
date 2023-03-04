@@ -23,7 +23,8 @@ class CustomBottomNavBar extends GetView<ApplicationsController> {
         currentIndex: controller.selectedNavIndex.value.index,
         type: BottomNavigationBarType.fixed,
         onTap: (index) {
-          controller.onBottomBarItemTap(index);
+          controller.changeTabIndex(index);
+          // controller.onBottomBarItemTap(index);
           controller.selectedNavIndex.value = TabType.values[index];
         },
         showSelectedLabels: true,

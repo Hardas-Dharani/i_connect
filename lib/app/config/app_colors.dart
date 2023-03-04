@@ -12,7 +12,7 @@ class AppColors {
   static Color txtGrey = HexColor("404040");
   static Color greyColor = HexColor("E9E9E9");
   static Color darkGreyColor = HexColor("D0D0D0");
-  static Color lightBlack = HexColor("111111");
+  static Color lightBlack = HexColor("202432");
   static Color lightBlack2 = HexColor("262A38");
   static Color green = HexColor("00FFA8");
 }

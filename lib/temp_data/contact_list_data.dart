@@ -102,7 +102,7 @@ List<ContactListData> contactListData = [
   ),
   ContactListData(
     imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Nicholas Dunn',
+    title: 'Nicholas Dunn 2',
     isGroup: false,
     trailing: '02:00 pm',
   ),

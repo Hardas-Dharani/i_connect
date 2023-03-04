@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:i_connect/app/util/custom_bot_navbar.dart';
@@ -12,6 +13,8 @@ import '../../../../app/config/app_colors.dart';
 import '../../../../app/util/common_appbar.dart';
 import '../../../../app/util/common_txt.dart';
 import '../../../../app/util/gradient_button.dart';
+import '../../../../app/util/util.dart';
+import '../../../../routes/app_routes.dart';
 import 'components/connnection_tile.dart';
 import 'controller/lets_connect_controller.dart';
 
@@ -33,21 +36,22 @@ class LetsConnectView extends GetView<LetsConnectController> {
             mainAxisSize: MainAxisSize.max,
             children: [
               CommonAppBar(
-                title: 'Let\'s Connct',
+                title: 'Let\'s Connect',
                 backIconTap: () {
                   Get.back();
                 },
                 homeIconTap: () {},
               ),
-              SizedBox(height: Get.height * 0.04),
+              SizedBox(height: Get.height * 0.03),
               Center(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     args.contactListArguements!.isGroup == true
                         ? Center(
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
                                 const Spacer(),
                                 Expanded(
                                   child: StackedAvatras(
@@ -57,23 +61,21 @@ class LetsConnectView extends GetView<LetsConnectController> {
                                     radius: 10.w,
                                   ),
                                 ),
-                                const Spacer(),
-                              ],
-                            ),
-                          )
+                                const Spacer()
+                              ]))
                         : CircleAvatar(
                             radius: 10.w,
                             backgroundImage: AssetImage(
                                 args.contactListArguements!.imgURL ?? ""),
                           ),
-                    const SizedBox(height: 12),
+                    SizedBox(height: Get.height * 0.013),
                     CommonText(
                       text: args.contactListArguements!.title ?? '',
                       color: AppColors.white,
                       fontSize: 18,
                       weight: FontWeight.w600,
                     ),
-                    const SizedBox(height: 12),
+                    SizedBox(height: Get.height * 0.013),
                     Icon(
                       FontAwesomeIcons.plugCircleBolt,
                       size: 12.w,
@@ -84,7 +86,7 @@ class LetsConnectView extends GetView<LetsConnectController> {
               ),
               SizedBox(height: Get.height * 0.03),
               SizedBox(
-                height: Get.height * 0.38,
+                height: 42.h,
                 child: Obx(
                   () => ListView.builder(
                     scrollDirection: Axis.vertical,
@@ -106,17 +108,18 @@ class LetsConnectView extends GetView<LetsConnectController> {
                           color: AppColors.white.withOpacity(0.6),
                           weight: FontWeight.w300,
                         ),
-                        trailing: Icon(
-                          FontAwesomeIcons.infinity,
-                          color: AppColors.green,
-                          size: 22,
+                        trailing: SvgPicture.asset(
+                          Utils.getSvgFilePath(
+                            'icon-connect',
+                          ),
+                          color: AppColors.white.withOpacity(0.6),
                         ),
                       );
                     },
                   ),
                 ),
               ),
-              SizedBox(height: Get.height * 0.03),
+              SizedBox(height: Get.height * 0.025),
               args.contactListArguements!.isGroup == true
                   ? Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -134,22 +137,25 @@ class LetsConnectView extends GetView<LetsConnectController> {
                               fontSize: 16,
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              CommonText(
-                                text: 'Connect Individiually',
-                                color: AppColors.white,
-                                fontSize: 16,
-                              ),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(Routes.indiviConnectScreen);
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                CommonText(
+                                  text: 'Connect Individiually',
+                                  color: AppColors.white,
+                                  fontSize: 16,
+                                ),
+                                const SizedBox(width: 15),
+                                Icon(
                                   CupertinoIcons.chevron_down,
                                   color: AppColors.white,
                                 ),
-                              )
-                            ],
+                              ],
+                            ),
                           )
                         ],
                       ),

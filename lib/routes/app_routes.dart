@@ -9,4 +9,5 @@ class Routes {
   static String get profileScreen => '/profileScreen';
   static String get applicationScreen => '/applicationScreen';
   static String get letsConnectScreen => '/letsConnectScreen';
+  static String get indiviConnectScreen => '/indiviConnectScreen';
 }

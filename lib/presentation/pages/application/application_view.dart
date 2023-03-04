@@ -20,22 +20,39 @@ class ApplicationView extends GetView<ApplicationsController> {
       body: Column(
         children: [
           Expanded(
-            child: PageView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: controller.pageController,
-              onPageChanged: (index) {
-                controller.onPageChage(index);
-              },
-              children: const [
-                ContactListView(),
-                MyGroupsView(),
-                SearchView(),
-                PremiumView(),
-              ],
+            child: Obx(
+              () => IndexedStack(
+                index: controller.tabIndex.value,
+                children: const [
+                  ContactListView(),
+                  MyGroupsView(),
+                  SearchView(),
+                  PremiumView(),
+                ],
+              ),
             ),
           ),
         ],
       ),
+      //     Column(
+      //   children: [
+      //     Expanded(
+      //       child: PageView(
+      //         physics: const NeverScrollableScrollPhysics(),
+      //         controller: controller.pageController,
+      //         onPageChanged: (index) {
+      //           controller.onPageChage(index);
+      //         },
+      //         children: const [
+      //           ContactListView(),
+      //           MyGroupsView(),
+      //           SearchView(),
+      //           PremiumView(),
+      //         ],
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
