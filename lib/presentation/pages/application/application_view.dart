@@ -19,21 +19,6 @@ class ApplicationView extends GetView<ApplicationsController> {
       bottomNavigationBar: const CustomBottomNavBar(),
       body: Column(
         children: [
-          // Expanded(
-          //   child: IndexedStack(
-          //     index: controller.selectedNavIndex.value.index,
-          //     children: [
-          //       const ContactListView(),
-          //       Center(
-          //           child:
-          //               CommonText(text: 'my groups', color: AppColors.white)),
-          //       Center(
-          //           child: CommonText(text: 'search', color: AppColors.white)),
-          //       Center(
-          //           child: CommonText(text: 'premium', color: AppColors.white)),
-          //     ],
-          //   ),
-          // ),
           Expanded(
             child: PageView(
               physics: const NeverScrollableScrollPhysics(),
