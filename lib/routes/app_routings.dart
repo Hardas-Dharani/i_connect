@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:i_connect/presentation/pages/application/application_view.dart';
 import 'package:i_connect/presentation/pages/application/binding/application_binding.dart';
+import 'package:i_connect/presentation/pages/filter_page/binding/filter_page_binding.dart';
+import 'package:i_connect/presentation/pages/filter_page/filter_page_view.dart';
 import 'package:i_connect/presentation/pages/profile/profile_page.dart';
 import 'package:i_connect/presentation/pages/sign_up/binding/sign_up_binding.dart';
 import 'package:i_connect/presentation/pages/sign_up/sign_up_page.dart';
@@ -27,6 +29,11 @@ class RoutingModule {
       name: Routes.signInScreen,
       page: () => const SigInScreen(),
       binding: SiginBinding(),
+    ),
+    GetPage(
+      name: Routes.filterScreen,
+      page: () => const FilterPageView(),
+      binding: FilterPageBinding(),
     ),
     GetPage(
       name: Routes.signUpScreen,

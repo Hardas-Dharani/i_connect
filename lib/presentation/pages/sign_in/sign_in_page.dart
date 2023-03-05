@@ -178,20 +178,18 @@ class SigInScreen extends GetView<SigninController> {
                       },
                     ),
                   ),
-                  SizedBox(
-                    height: Get.height * 0.05,
-                  ),
+                  SizedBox(height: Get.height * 0.05),
                   CustomGradientButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.offAndToNamed(Routes.applicationScreen);
+                    },
                     child: CommonText(
                       text: 'Login',
                       fontSize: 18,
                       color: HexColor('262A38'),
                     ),
                   ),
-                  SizedBox(
-                    height: Get.height * 0.05,
-                  ),
+                  SizedBox(height: Get.height * 0.05),
                 ],
               )),
             ))

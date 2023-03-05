@@ -15,12 +15,12 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(milliseconds: 500)).whenComplete(
+    Future.delayed(const Duration(milliseconds: 1500)).whenComplete(
       () {
         // if (Get.find<LocalStorageService>().token != null) {
         //   Get.toNamed(Routes.stats);
         // } else {
-        Get.toNamed(Routes.startScreen);
+        Get.toNamed(Routes.filterScreen);
         // }
       },
     );

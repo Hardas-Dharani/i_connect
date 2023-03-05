@@ -86,7 +86,7 @@ class PremiumPlanCArd extends StatelessWidget {
           ),
           SizedBox(height: Get.height * 0.03),
           CustomGradientButton(
-            onPressed: ontap, //() {},
+            onPressed: ontap,
             width: Get.width * 0.45,
             gradient:
                 LinearGradient(colors: [AppColors.white, AppColors.white]),
