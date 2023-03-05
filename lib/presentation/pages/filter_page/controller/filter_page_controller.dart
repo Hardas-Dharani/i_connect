@@ -8,9 +8,9 @@ import 'package:sizer/sizer.dart';
 import '../../../../routes/app_routes.dart';
 
 class FilterPageController extends GetxController {
-  String selectedCountry = '';
-  String selectedState = '';
-  String selectedCity = '';
+  String? selectedCountry;
+  String? selectedState;
+  String? selectedCity;
 
   final List<String> countries = ['USA', 'Canada', 'Mexico'];
   final Map<String, List<String>> statesInCountry = {
@@ -35,15 +35,14 @@ class FilterPageController extends GetxController {
 
   void onCountrySelected(String country) {
     selectedCountry = country;
-    selectedState = '';
-    selectedCity = '';
+
     expand = true;
     update();
   }
 
   void onStateSelected(String state) {
     selectedState = state;
-    selectedCity = '';
+
     expand = true;
     expand2 = true;
     update();
@@ -53,6 +52,7 @@ class FilterPageController extends GetxController {
     selectedCity = city;
     expand = true;
     expand2 = true;
+    expand3 = true;
     update();
   }
 
@@ -105,6 +105,15 @@ class FilterPageController extends GetxController {
                           ),
                           SizedBox(height: Get.height * 0.01),
                           DropdownButtonFormField<String>(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide:
+                                      BorderSide(color: AppColors.lightBlack)),
+                              hintText: 'Select Country',
+                              hintStyle: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w300),
+                            ),
                             value: selectedCountry,
                             items: countries.map((country) {
                               return DropdownMenuItem(
@@ -118,36 +127,6 @@ class FilterPageController extends GetxController {
                           ),
                         ],
                       ),
-                      expand2
-                          ? Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: Get.height * 0.02),
-                                CommonText(
-                                  text: 'City',
-                                  color: AppColors.black,
-                                  weight: FontWeight.bold,
-                                  fontSize: 20,
-                                  textAlign: TextAlign.left,
-                                ),
-                                SizedBox(height: Get.height * 0.01),
-                                DropdownButtonFormField<String>(
-                                  value: selectedCity,
-                                  items:
-                                      citiesInState[selectedState]!.map((city) {
-                                    return DropdownMenuItem(
-                                      value: city,
-                                      child: Text(city),
-                                    );
-                                  }).toList(),
-                                  onChanged: (value) {
-                                    onCitySelected(value!);
-                                  },
-                                ),
-                              ],
-                            )
-                          : const SizedBox.shrink(),
                       expand
                           ? Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -163,14 +142,26 @@ class FilterPageController extends GetxController {
                                 ),
                                 SizedBox(height: Get.height * 0.01),
                                 DropdownButtonFormField<String>(
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: BorderSide(
+                                            color: AppColors.lightBlack)),
+                                    hintText: 'Select State',
+                                    hintStyle: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w300),
+                                  ),
                                   value: selectedState,
-                                  items: statesInCountry[selectedCountry]!
-                                      .map((state) {
-                                    return DropdownMenuItem(
-                                      value: state,
-                                      child: Text(state),
-                                    );
-                                  }).toList(),
+                                  items: selectedCountry != null
+                                      ? statesInCountry[selectedCountry]!
+                                          .map((state) {
+                                          return DropdownMenuItem(
+                                            value: state,
+                                            child: Text(state),
+                                          );
+                                        }).toList()
+                                      : [],
                                   onChanged: (value) {
                                     onStateSelected(value!);
                                   },
@@ -178,22 +169,75 @@ class FilterPageController extends GetxController {
                               ],
                             )
                           : const SizedBox.shrink(),
+                      expand2
+                          ? Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: Get.height * 0.02),
+                                CommonText(
+                                  text: 'City',
+                                  color: AppColors.black,
+                                  weight: FontWeight.bold,
+                                  fontSize: 20,
+                                  textAlign: TextAlign.left,
+                                ),
+                                SizedBox(height: Get.height * 0.01),
+                                DropdownButtonFormField<String>(
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: BorderSide(
+                                            color: AppColors.lightBlack)),
+                                    hintText: 'Select City',
+                                    hintStyle: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                  value: selectedCity,
+                                  items: selectedState != null
+                                      ? citiesInState[selectedState]!
+                                          .map((city) {
+                                          return DropdownMenuItem(
+                                            value: city,
+                                            child: Text(city),
+                                          );
+                                        }).toList()
+                                      : [],
+                                  onChanged: (value) {
+                                    onCitySelected(value!);
+                                  },
+                                ),
+                              ],
+                            )
+                          : const SizedBox.shrink(),
                       expand3
-                          ? CustomButton(
-                              width: Get.width * 0.3,
-                              gradient: LinearGradient(
-                                colors: [AppColors.green, AppColors.green],
+                          ? Center(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: Get.height * 0.02),
+                                  CustomButton(
+                                      width: Get.width * 0.3,
+
+                                      // gradient: LinearGradient(
+                                      //   begin: Alignment.bottomCenter,
+                                      //   end: Alignment.topCenter,
+                                      //   colors: [
+                                      //     AppColors.lightBlack2,
+                                      //     AppColors.lightBlack2,
+                                      //   ],
+                                      // ),
+                                      onPressed: () async {
+                                        Get.back();
+                                      },
+                                      child: CommonText(
+                                        text: 'Next',
+                                        color: AppColors.black,
+                                      )),
+                                  SizedBox(height: Get.height * 0.01),
+                                ],
                               ),
-                              onPressed: () async {
-                                Get.back();
-                                await Future.delayed(
-                                    const Duration(seconds: 2));
-                                Get.toNamed(Routes.startScreen);
-                              },
-                              child: CommonText(
-                                text: 'Next',
-                                color: AppColors.black,
-                              ))
+                            )
                           : const SizedBox.shrink(),
                     ],
                   )),

@@ -69,47 +69,71 @@ class ContactListView extends GetView<ContactListController> {
               ],
             ),
             SizedBox(height: Get.height * 0.02),
-            SizedBox(
-              height: 62.h,
-              child: Obx(
-                () => ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  itemCount: controller.myList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    var item = controller.myList[index];
-                    return ContactsTile(
-                      ontap: () {
-                        Get.toNamed(Routes.letsConnectScreen,
-                            arguments: ConnectionArguements(
-                              contactListArguements: item,
-                            ));
+            Stack(
+              children: [
+                SizedBox(
+                  height: 62.h,
+                  child: Obx(
+                    () => ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      itemCount: controller.myList.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        var item = controller.myList[index];
+                        return ContactsTile(
+                          ontap: () {
+                            Get.toNamed(Routes.letsConnectScreen,
+                                arguments: ConnectionArguements(
+                                  contactListArguements: item,
+                                ));
+                          },
+                          leading: item.isGroup == false
+                              ? CircleAvatar(
+                                  radius: 6.w,
+                                  backgroundImage:
+                                      AssetImage(item.imgURL ?? ""),
+                                )
+                              : StackedAvatras(imgURL: item.imgURL ?? ""),
+                          bgColor: index % 2 == 0
+                              ? AppColors.lightBlack2
+                              : Colors.transparent,
+                          label: item.title ?? "",
+                          subtitle: item.isGroup == true
+                              ? CommonText(
+                                  text: item.subtitle ?? '',
+                                  fontSize: 14,
+                                  color: AppColors.white.withOpacity(0.6),
+                                  weight: FontWeight.w300,
+                                )
+                              : Container(),
+                          time: item.trailing ?? "",
+                        );
                       },
-                      leading: item.isGroup == false
-                          ? CircleAvatar(
-                              radius: 6.w,
-                              backgroundImage: AssetImage(item.imgURL ?? ""),
-                            )
-                          : StackedAvatras(imgURL: item.imgURL ?? ""),
-                      bgColor: index % 2 == 0
-                          ? AppColors.lightBlack2
-                          : Colors.transparent,
-                      label: item.title ?? "",
-                      subtitle: item.isGroup == true
-                          ? CommonText(
-                              text: item.subtitle ?? '',
-                              fontSize: 14,
-                              color: AppColors.white.withOpacity(0.6),
-                              weight: FontWeight.w300,
-                            )
-                          : Container(),
-                      time: item.trailing ?? "",
-                    );
-                  },
+                    ),
+                  ),
                 ),
-              ),
+                // Positioned(
+                //   bottom: 0,
+                //   left: 0,
+                //   right: 0,
+                //   child: Container(
+                //     height: 60, // Adjust the height as needed
+                //     decoration: BoxDecoration(
+                //       gradient: LinearGradient(
+                //         // begin: Alignment.bottomCenter,
+                //         // end: Alignment.topCenter,
+                //         colors: [
+                //           Colors.black,
+                //           Colors.black.withOpacity(0.7),
+                //           Colors.black.withOpacity(0.4)
+                //         ],
+                //       ),
+                //     ),
+                //   ),
+                // ),
+              ],
             ),
           ],
         ),
