@@ -25,6 +25,7 @@ class ContactListView extends GetView<ContactListController> {
         color: Colors.transparent,
       ),
       child: SingleChildScrollView(
+        padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
         child: Column(
           children: [
@@ -69,7 +70,7 @@ class ContactListView extends GetView<ContactListController> {
             ),
             SizedBox(height: Get.height * 0.02),
             SizedBox(
-              height: 61.h,
+              height: 62.h,
               child: Obx(
                 () => ListView.builder(
                   scrollDirection: Axis.vertical,
@@ -110,7 +111,6 @@ class ContactListView extends GetView<ContactListController> {
                 ),
               ),
             ),
-            SizedBox(height: Get.height * 0.04),
           ],
         ),
       ),

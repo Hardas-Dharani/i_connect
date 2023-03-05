@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../../../app/config/app_colors.dart';
 import '../../../../../app/util/common_txt.dart';
 import '../../../../../app/util/custom_button.dart';
+import '../../../../../app/util/gradient_button.dart';
 
 class PremiumPlanCArd extends StatelessWidget {
   const PremiumPlanCArd({
@@ -84,11 +85,14 @@ class PremiumPlanCArd extends StatelessWidget {
             ),
           ),
           SizedBox(height: Get.height * 0.03),
-          CustomButton(
+          CustomGradientButton(
             onPressed: ontap, //() {},
+            width: Get.width * 0.45,
+            gradient:
+                LinearGradient(colors: [AppColors.white, AppColors.white]),
             child: CommonText(
               text: 'BUY NOW',
-              color: AppColors.white,
+              color: AppColors.lightBlack,
               fontSize: 18,
               weight: FontWeight.w400,
             ),
