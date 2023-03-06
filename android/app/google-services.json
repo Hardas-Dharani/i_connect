@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "515059161893",
+    "project_id": "iconnectfb-962c9",
+    "storage_bucket": "iconnectfb-962c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515059161893:android:70cb6317a49f1ae3f058cc",
+        "android_client_info": {
+          "package_name": "com.app.i_connect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515059161893-h4c554ao069l5j3ch45ecocc2oietned.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDvS32mzGeYftzHQsZ5RcgsZS44vhKm4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515059161893-h4c554ao069l5j3ch45ecocc2oietned.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
