@@ -13,16 +13,23 @@ class CheckText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
-          Icons.check,
-          color: AppColors.white.withOpacity(0.7),
-          size: 27,
+        Expanded(
+          flex: 1,
+          child: Icon(
+            Icons.check,
+            color: AppColors.white.withOpacity(0.7),
+            size: 27,
+          ),
         ),
-        CommonText(
-          text: text,
-          color: AppColors.white.withOpacity(0.7),
-          fontSize: 18,
-          weight: FontWeight.w400,
+        const SizedBox(width: 6),
+        Expanded(
+          flex: 3,
+          child: CommonText(
+            text: text,
+            color: AppColors.white.withOpacity(0.7),
+            fontSize: 18,
+            weight: FontWeight.w400,
+          ),
         )
       ],
     );

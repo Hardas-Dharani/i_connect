@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:i_connect/app/config/app_colors.dart';
-import 'package:i_connect/app/extensions/color.dart';
 import 'package:i_connect/app/util/common_txt.dart';
-import 'package:i_connect/app/util/custom_button.dart';
 import 'package:i_connect/app/util/gradient_button.dart';
 import 'package:i_connect/presentation/tabs/premium_tabs/premium/components/premium_plan_card.dart';
 import 'package:sizer/sizer.dart';
@@ -48,15 +46,19 @@ class PremiumView extends GetView<PremiumViewController> {
                         weight: FontWeight.w400,
                       ),
                       SizedBox(height: Get.height * 0.01),
-                      Row(
-                        children: const [
-                          CheckText(text: '2 USERS'),
-                          SizedBox(width: 12),
-                          CheckText(text: '30 DAYS'),
-                          SizedBox(width: 12),
-                          CheckText(text: '1HR DAY'),
-                        ],
-                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Expanded(child: CheckText(text: '2 USERS')),
+                      SizedBox(width: 6),
+                      Expanded(child: CheckText(text: '30 DAYS')),
+                      SizedBox(width: 6),
+                      Expanded(child: CheckText(text: '1HR DAY')),
                     ],
                   ),
                 ),
