@@ -1,5 +1,4 @@
 class Routes {
-  static String get filterScreen => '/filterScreen';
   static String get signInScreen => '/SignInScreen';
   static String get signUpScreen => '/signUpScreen';
   static String get startScreen => '/StartScreen';
