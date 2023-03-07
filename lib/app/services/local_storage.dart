@@ -17,13 +17,15 @@ class LocalStorageService extends GetxService {
     }
     return rawJson;
   }
-set token(String? value) {
+
+  set token(String? value) {
     if (value != null) {
       _sharedPreferences?.setString(_Key.token.toString(), value);
     } else {
       _sharedPreferences?.remove(_Key.token.toString());
     }
   }
+
   User? get user {
     final rawJson = _sharedPreferences?.getString(_Key.user.toString());
     if (rawJson == null) {

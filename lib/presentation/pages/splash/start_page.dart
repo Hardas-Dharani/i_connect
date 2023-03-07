@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:i_connect/app/config/app_colors.dart';
 import 'package:i_connect/app/extensions/color.dart';
 import 'package:i_connect/app/util/common_txt.dart';
+import 'package:i_connect/presentation/pages/splash/controller/start_page_controller.dart';
 
 import '../../../app/util/custom_button.dart';
 import '../../../app/util/gradient_button.dart';
@@ -11,7 +12,7 @@ import '../../../app/util/scaffold_widget.dart';
 import '../../../app/util/util.dart';
 import '../../../routes/app_routes.dart';
 
-class StartPage extends StatelessWidget {
+class StartPage extends GetView<StartPageController> {
   const StartPage({super.key});
 
   @override
@@ -58,8 +59,9 @@ class StartPage extends StatelessWidget {
             height: Get.height * 0.02,
           ),
           CustomButton(
-            onPressed: () {
-              Get.toNamed(Routes.signInScreen);
+            onPressed: () async {
+              await controller.loginWithGoogle();
+              // Get.toNamed(Routes.signInScreen);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -79,8 +81,9 @@ class StartPage extends StatelessWidget {
             height: Get.height * 0.02,
           ),
           CustomButton(
-            onPressed: () {
-              Get.toNamed(Routes.signInScreen);
+            onPressed: () async {
+              await controller.loginWithFacebook();
+              // Get.toNamed(Routes.signInScreen);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
