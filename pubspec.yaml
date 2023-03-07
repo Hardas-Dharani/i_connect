@@ -48,11 +48,11 @@ dependencies:
   #modal_progress_hud_nsn: ^0.3.0
   sizer: ^2.0.15
   #syncfusion_flutter_datagrid: ^20.3.59
-  simple_fontellico_progress_dialog: ^0.2.1
-  #connectivity_plus: ^3.0.2
+  simple_fontellico_progress_dialog: ^0.3.0
+  connectivity_plus: ^3.0.2
   font_awesome_flutter: ^10.4.0
   firebase_core: ^2.4.1
-  google_sign_in: ^5.4.4
+  google_sign_in: ^6.0.2
   flutter_facebook_auth: ^5.0.8
   firebase_messaging: ^14.2.2
   cloud_firestore: ^4.3.2
@@ -69,7 +69,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  flutter_launcher_icons: ^0.11.0
+  flutter_launcher_icons: ^0.12.0
 flutter_icons:
   android: "launcher_icon"
   ios: true
