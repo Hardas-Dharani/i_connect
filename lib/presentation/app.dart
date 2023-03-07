@@ -7,6 +7,8 @@ import '../routes/app_routings.dart';
 import 'pages/splash/splash.dart';
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {

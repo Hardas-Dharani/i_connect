@@ -4,14 +4,10 @@ import 'package:get/get.dart';
 import 'package:i_connect/app/util/check_box.dart';
 import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
 import 'package:sizer/sizer.dart';
-
 import '../../../app/config/app_colors.dart';
 import '../../../app/extensions/color.dart';
-import '../../../app/services/local_storage.dart';
 import '../../../app/util/common_txt.dart';
-import '../../../app/util/eveleted_button.dart';
 import '../../../app/util/gradient_button.dart';
-import '../../../app/util/loader.dart';
 import '../../../app/util/scaffold_widget.dart';
 import '../../../app/util/util.dart';
 import '../../../routes/app_routes.dart';

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:i_connect/app/config/app_colors.dart';
-import 'package:i_connect/app/util/common_txt.dart';
 import 'package:i_connect/app/util/custom_bot_navbar.dart';
 import 'package:i_connect/app/util/scaffold_widget.dart';
 import 'package:i_connect/presentation/pages/application/controller/application_controller.dart';

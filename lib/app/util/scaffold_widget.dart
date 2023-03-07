@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../config/app_colors.dart';
 import '../extensions/color.dart';
-import '../services/local_storage.dart';
 
 class ScafoldedWidget extends StatelessWidget {
   final Widget body;

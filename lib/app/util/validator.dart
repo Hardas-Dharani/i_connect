@@ -1,5 +1,6 @@
 extension ExtString on String {
   bool get isNotNull {
+    // ignore: unnecessary_null_comparison
     return this != null;
   }
 

@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:i_connect/app/util/common_txt.dart';
-import 'package:i_connect/app/util/util.dart';
-import 'package:sizer/sizer.dart';
 
 class AvatarWithLabel extends StatelessWidget {
   const AvatarWithLabel({

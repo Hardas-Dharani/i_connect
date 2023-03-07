@@ -2,6 +2,7 @@ import '../../domain/entities/paging.dart';
 
 class PagingModel extends Paging {
   @override
+  // ignore: overridden_fields
   final int totalResults;
 
   PagingModel({

@@ -100,6 +100,7 @@ class AppException implements Exception {
 
   @override
   String toString() {
+    // ignore: avoid_print
     print(details);
 
     return "$details";

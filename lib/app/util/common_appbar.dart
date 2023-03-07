@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:i_connect/app/util/util.dart';
 
 import '../config/app_colors.dart';
 import 'common_txt.dart';

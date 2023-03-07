@@ -12,11 +12,13 @@ class GetXNetworkManager extends GetxController {
   //Stream to keep listening to network change state
   late StreamSubscription _streamSubscription;
   // a method to get which connection result, if you we connected to internet or no if yes then which network
+  // ignore: non_constant_identifier_names
   Future<void> GetConnectionType() async {
     ConnectivityResult? connectivityResult;
     try {
       connectivityResult = await (_connectivity.checkConnectivity());
     } on PlatformException catch (e) {
+      // ignore: avoid_print
       print(e);
     }
     return _updateState(connectivityResult!);

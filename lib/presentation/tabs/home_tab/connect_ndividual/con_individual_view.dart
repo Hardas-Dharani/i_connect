@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:i_connect/presentation/tabs/home_tab/connect_ndividual/components/individual_tile.dart';
-import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/contacts_tile.dart';
+import 'components/individual_tile.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../app/config/app_colors.dart';
 import '../../../../app/util/common_appbar.dart';
@@ -11,7 +10,6 @@ import '../../../../app/util/common_txt.dart';
 import '../../../../app/util/custom_bot_navbar.dart';
 import '../../../../app/util/scaffold_widget.dart';
 import '../../../../app/util/util.dart';
-import '../lets_connect/components/connnection_tile.dart';
 import 'coontroller/connect_indiv_controller.dart';
 
 class ConnectIndividuallyView extends GetView<ConnectIndividualController> {

@@ -1,14 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:i_connect/app/config/app_colors.dart';
 import 'package:i_connect/presentation/tabs/groups_tab/my_group/components/my_groups_tile.dart';
 import 'package:i_connect/presentation/tabs/groups_tab/my_group/controller/my_groups_controller.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/avatar_bottom_text.dart';
 import 'package:sizer/sizer.dart';
-
 import '../../../../app/util/common_appbar.dart';
 import '../../../../app/util/util.dart';
 import '../../home_tab/contact_list/components/stacked_group_avatar.dart';
