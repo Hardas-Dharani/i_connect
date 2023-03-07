@@ -92,20 +92,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
-  connectivity_plus:
-    dependency: "direct main"
-    description:
-      name: connectivity_plus
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.3"
-  connectivity_plus_platform_interface:
-    dependency: transitive
-    description:
-      name: connectivity_plus_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.2.4"
   convert:
     dependency: transitive
     description:
@@ -127,20 +113,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
-  custom_date_range_picker:
-    dependency: "direct main"
-    description:
-      name: custom_date_range_picker
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.6"
-  dbus:
-    dependency: transitive
-    description:
-      name: dbus
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.8"
   facebook_auth_desktop:
     dependency: transitive
     description:
@@ -169,13 +141,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.4"
-  filter_list:
-    dependency: "direct main"
-    description:
-      name: filter_list
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.2"
   firebase_auth:
     dependency: "direct main"
     description:
@@ -265,13 +230,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_easyloading:
-    dependency: "direct main"
-    description:
-      name: flutter_easyloading
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.5"
   flutter_facebook_auth:
     dependency: "direct main"
     description:
@@ -307,11 +265,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
-  flutter_localizations:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
   flutter_secure_storage:
     dependency: transitive
     description:
@@ -354,13 +307,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
-  flutter_spinkit:
-    dependency: transitive
-    description:
-      name: flutter_spinkit
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "5.1.0"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -497,41 +443,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  modal_progress_hud_nsn:
-    dependency: "direct main"
-    description:
-      name: modal_progress_hud_nsn
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.0"
-  multi_select_flutter:
-    dependency: "direct main"
-    description:
-      name: multi_select_flutter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.1.3"
-  multiselect:
-    dependency: "direct main"
-    description:
-      name: multiselect
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.9"
-  navigation_builder:
-    dependency: transitive
-    description:
-      name: navigation_builder
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.2+4"
-  nm:
-    dependency: transitive
-    description:
-      name: nm
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.5.0"
   path:
     dependency: transitive
     description:
@@ -698,13 +609,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
-  states_rebuilder:
-    dependency: transitive
-    description:
-      name: states_rebuilder
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "6.2.0"
   stream_channel:
     dependency: transitive
     description:
@@ -719,20 +623,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.1"
-  syncfusion_flutter_core:
-    dependency: transitive
-    description:
-      name: syncfusion_flutter_core
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "20.4.52"
-  syncfusion_flutter_datagrid:
-    dependency: "direct main"
-    description:
-      name: syncfusion_flutter_datagrid
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "20.4.52"
   term_glyph:
     dependency: transitive
     description:
@@ -797,5 +687,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.18.2 <3.0.0"
+  dart: ">=2.18.1 <3.0.0"
   flutter: ">=3.3.0"

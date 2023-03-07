@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:i_connect/app/config/app_colors.dart';
-import 'package:i_connect/app/extensions/color.dart';
-import 'package:i_connect/app/util/common_txt.dart';
-import 'package:i_connect/presentation/pages/splash/controller/start_page_controller.dart';
-
+import 'controller/start_page_controller.dart';
+import '../../../app/config/app_colors.dart';
+import '../../../app/extensions/color.dart';
+import '../../../app/util/common_txt.dart';
 import '../../../app/util/custom_button.dart';
 import '../../../app/util/gradient_button.dart';
 import '../../../app/util/scaffold_widget.dart';
