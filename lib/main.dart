@@ -4,9 +4,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:i_connect/app/services/storage_service/user_storage.dart';
 import 'package:i_connect/firebase_options.dart';
 
-import 'app/services/local_storage.dart';
+import 'app/services/storage_service/local_storage.dart';
 import 'presentation/app.dart';
 
 void main() async {
@@ -21,6 +22,7 @@ void main() async {
 initServices() async {
   print('starting services ...');
   await Get.putAsync(() => LocalStorageService().init());
+  Get.put<UserStorage>(UserStorage());
   print('All services started...');
 }
 
