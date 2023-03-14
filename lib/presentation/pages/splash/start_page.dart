@@ -59,7 +59,7 @@ class StartPage extends GetView<StartPageController> {
           ),
           CustomButton(
             onPressed: () async {
-              await controller.loginWithGoogle();
+              // await controller.loginWithGoogle();
               // Get.toNamed(Routes.signInScreen);
             },
             child: Row(
@@ -81,7 +81,7 @@ class StartPage extends GetView<StartPageController> {
           ),
           CustomButton(
             onPressed: () async {
-              await controller.loginWithFacebook();
+              // await controller.loginWithFacebook();
               // Get.toNamed(Routes.signInScreen);
             },
             child: Row(

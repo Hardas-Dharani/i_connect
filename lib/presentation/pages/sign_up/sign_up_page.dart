@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
+//import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
 import '../../../app/config/app_colors.dart';
 import '../../../app/extensions/color.dart';
 import '../../../app/util/common_txt.dart';
@@ -16,10 +16,10 @@ class SignUpScreen extends GetView<SignupController> {
 
   @override
   Widget build(BuildContext context) {
-    SimpleFontelicoProgressDialog dialog = SimpleFontelicoProgressDialog(
-      context: context,
-      barrierDimisable: false,
-    );
+    // SimpleFontelicoProgressDialog dialog = SimpleFontelicoProgressDialog(
+    //   context: context,
+    //   barrierDimisable: false,
+    // );
     return ScafoldedWidget(
         body: SafeArea(
       child: Form(

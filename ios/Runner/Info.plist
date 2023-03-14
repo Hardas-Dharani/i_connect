@@ -56,11 +56,11 @@
   </array>
   </dict>
 </array>
-<key>FacebookAppID</key>
+<!-- <key>FacebookAppID</key>
 <string>1347605235814504</string>
 <key>FacebookClientToken</key>
 <string>94143a26010afee488b8a12e2b811976</string>
 <key>FacebookDisplayName</key>
-<string>iconnectfauth</string>
+<string>iconnectfauth</string> -->
 </dict>
 </plist>
