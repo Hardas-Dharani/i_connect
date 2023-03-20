@@ -50,7 +50,9 @@ class ContactListView extends GetView<ContactListController> {
                   ),
                   label: 'add individual',
                   labelColor: AppColors.white.withOpacity(0.6),
-                  press: () {},
+                  press: () {
+                    // Get.toNamed(Routes.indiviConnectScreen);
+                  },
                 ),
                 const SizedBox(width: 24),
                 AvatarWithLabel(
@@ -64,7 +66,9 @@ class ContactListView extends GetView<ContactListController> {
                       )),
                   label: 'add groups',
                   labelColor: AppColors.white.withOpacity(0.6),
-                  press: () {},
+                  press: () {
+                    Get.toNamed(Routes.createGroupScreen);
+                  },
                 )
               ],
             ),

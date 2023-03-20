@@ -1,84 +1,40 @@
 class IndividualData {
   String? imgURL;
   String? title;
-  String? subtitle;
 
   IndividualData({
     this.imgURL,
     this.title,
-    this.subtitle,
   });
 }
 
 List<IndividualData> myIndividualList = [
   IndividualData(
     imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group1',
-    subtitle: '9 people in this group',
+    title: 'Nicholas Dunn',
   ),
   IndividualData(
     imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group1',
-    subtitle: '9 people in this group',
+    title: 'Jayson Boyd',
   ),
   IndividualData(
     imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group',
-    subtitle: '9 people in this group',
+    title: 'Carol Clark',
   ),
   IndividualData(
     imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group1',
-    subtitle: '9 people in this group',
+    title: 'Janet Fowler',
   ),
   IndividualData(
     imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group1',
-    subtitle: '9 people in this group',
+    title: 'Jack Spencer',
   ),
   IndividualData(
     imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group1 ',
-    subtitle: '9 people in this group',
+    title: 'Martha Walter',
   ),
   IndividualData(
     imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group1',
-    subtitle: '9 people in this group',
-  ),
-  IndividualData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group1',
-    subtitle: '9 people in this group',
-  ),
-  IndividualData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group1',
-    subtitle: '9 people in this group',
-  ),
-  IndividualData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group1 ',
-    subtitle: '4 people in this group',
-  ),
-  IndividualData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group2',
-    subtitle: '9 people in this group',
-  ),
-  IndividualData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group12',
-    subtitle: '5 people in this group',
-  ),
-  IndividualData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group5',
-    subtitle: '6 people in this group',
-  ),
-  IndividualData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: 'Group7 ',
-    subtitle: '2 people in this group',
+    title: 'Liana Star',
   ),
 ];

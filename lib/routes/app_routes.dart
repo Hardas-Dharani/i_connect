@@ -7,4 +7,5 @@ class Routes {
   static String get applicationScreen => '/applicationScreen';
   static String get letsConnectScreen => '/letsConnectScreen';
   static String get indiviConnectScreen => '/indiviConnectScreen';
+  static String get createGroupScreen => '/createGroupScreen';
 }

@@ -19,41 +19,26 @@ List<ConnnectionData> connectionDAta = [
   ConnnectionData(
     imgURL: 'assets/images/i-connect-icon.png',
     title: 'Wednesday ',
-    subtitle: '02:00 pm',
+    subtitle: '01:38 pm',
   ),
   ConnnectionData(
     imgURL: 'assets/images/i-connect-icon.png',
     title: '05 Jan ',
-    subtitle: '02:00 pm',
+    subtitle: '12:17 pm',
   ),
   ConnnectionData(
     imgURL: 'assets/images/i-connect-icon.png',
     title: '22 July 2022',
-    subtitle: '02:00 pm',
+    subtitle: '06:49 pm',
   ),
   ConnnectionData(
     imgURL: 'assets/images/i-connect-icon.png',
     title: 'Sunday ',
-    subtitle: '02:00 pm',
+    subtitle: '08:00 pm',
   ),
   ConnnectionData(
     imgURL: 'assets/images/i-connect-icon.png',
-    title: '22 July 2022 ',
-    subtitle: '02:00 pm',
-  ),
-  ConnnectionData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: '22 July 2022 ',
-    subtitle: '02:00 pm',
-  ),
-  ConnnectionData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: '22 July 2022 ',
-    subtitle: '02:00 pm',
-  ),
-  ConnnectionData(
-    imgURL: 'assets/images/i-connect-icon.png',
-    title: '22 July 2022 ',
-    subtitle: '02:00 pm',
+    title: '12 oct 2022 ',
+    subtitle: '11:45 pm',
   ),
 ];

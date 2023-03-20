@@ -36,14 +36,12 @@ List<PeremiumPlanData> premiumPlanDAta = [
   PeremiumPlanData(
     title: 'GOLD',
     price: 49.00,
-    // timePeriod: 'For 1 DAY',
     description: '7-10 Users\n(interchangable)\n\nUnlimited Connect time',
     gradient: PremiumPlanType.gold.gradient,
   ),
   PeremiumPlanData(
     title: 'PLATINUM',
     price: 99.00,
-    // timePeriod: 'For 1 DAY',
     description: '11-25 Users\n(interchangable)\n\nUnlimited Connect time',
     gradient: PremiumPlanType.platinum.gradient,
   ),

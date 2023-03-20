@@ -12,7 +12,6 @@
 //   String token = '';
 
 //   final _profile = FireBaseUserLoginResponseEntityModel().obs;
-
 //   bool get isLogin => _isLogin.value;
 //   FireBaseUserLoginResponseEntityModel get profile => _profile.value;
 //   bool get hasToken => token.isNotEmpty;
