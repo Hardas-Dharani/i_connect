@@ -51,7 +51,7 @@ class ContactListView extends GetView<ContactListController> {
                   label: 'add individual',
                   labelColor: AppColors.white.withOpacity(0.6),
                   press: () {
-                    // Get.toNamed(Routes.indiviConnectScreen);
+                    Get.toNamed(Routes.indiviConnectScreen);
                   },
                 ),
                 const SizedBox(width: 24),

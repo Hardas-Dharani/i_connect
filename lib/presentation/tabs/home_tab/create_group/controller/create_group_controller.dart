@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:i_connect/presentation/tabs/home_tab/contact_list/controller/contact_list_controller.dart';
+import 'package:i_connect/temp_data/contact_list_data.dart';
 import 'package:i_connect/temp_data/individual_list.dart';
 
 class CreateGroupController extends GetxController {
@@ -24,6 +26,11 @@ class CreateGroupController extends GetxController {
       // Select the item if it is not already selected
       selectedIndices.add(index);
     }
+    update();
+  }
+
+  addtoList(ContactListData data) {
+    ContactListController.to.myList.add(data);
     update();
   }
 }

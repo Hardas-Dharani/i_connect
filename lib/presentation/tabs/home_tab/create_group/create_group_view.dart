@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:i_connect/app/util/scaffold_widget.dart';
 import 'package:i_connect/presentation/tabs/home_tab/create_group/controller/create_group_controller.dart';
+import 'package:i_connect/temp_data/contact_list_data.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../app/config/app_colors.dart';
@@ -10,6 +11,7 @@ import '../../../../app/extensions/color.dart';
 import '../../../../app/util/common_appbar.dart';
 import '../../../../app/util/common_txt.dart';
 import '../../../../app/util/gradient_button.dart';
+import '../../../../app/util/tosate_message.dart';
 import '../../../../app/util/util.dart';
 import '../connect_ndividual/components/individual_tile.dart';
 
@@ -73,7 +75,20 @@ class CreategroupView extends GetView<CreateGroupController> {
                       visible: controller.selectedIndices.length > 1,
                       child: CustomGradientButton(
                         width: Get.width * 0.6,
-                        onPressed: () {},
+                        onPressed: () {
+                          controller.addtoList(
+                            ContactListData(
+                              imgURL: 'assets/images/i-connect-icon.png',
+                              isGroup: true,
+                              title: 'New Group ',
+                              subtitle:
+                                  '${controller.selectedIndices.length} members',
+                              trailing: '02:00 pm',
+                            ),
+                          );
+                          ToastMessage().message('group created successfully');
+                          Get.back();
+                        },
                         child: CommonText(
                           text: 'create new group',
                           fontSize: 18,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import '../../../../app/util/tosate_message.dart';
+import '../../../../temp_data/contact_list_data.dart';
 import 'components/individual_tile.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../app/config/app_colors.dart';
@@ -68,6 +70,19 @@ class ConnectIndividuallyView extends GetView<ConnectIndividualController> {
                     itemBuilder: (BuildContext context, int index) {
                       var item = controller.myList[index];
                       return IndividualConnTile(
+                        ontap: () {
+                          controller.addtoList(
+                            ContactListData(
+                              imgURL: item.imgURL,
+                              isGroup: false,
+                              title: item.title,
+                              trailing: '02:00 pm',
+                            ),
+                          );
+                          ToastMessage()
+                              .message('contact connected successfully');
+                          Get.back();
+                        },
                         bgColor: index % 2 == 0
                             ? AppColors.lightBlack2
                             : Colors.transparent,
