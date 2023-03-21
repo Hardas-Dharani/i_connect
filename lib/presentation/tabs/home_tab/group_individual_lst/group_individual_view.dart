@@ -13,12 +13,20 @@ import '../../../../app/util/scaffold_widget.dart';
 import '../../../../app/util/tosate_message.dart';
 import '../../../../app/util/util.dart';
 import '../../../../temp_data/contact_list_data.dart';
-import 'components/individual_tile.dart';
-import 'coontroller/connect_indiv_controller.dart';
+import '../../../../temp_data/individual_list.dart';
+import 'components/group_indiv_tile.dart';
+import 'coontroller/group_indiv_controller.dart';
 
-class ConnectIndividuallyView extends GetView<ConnectIndividualController> {
-  const ConnectIndividuallyView({super.key});
+class GroupIndivd {
+  List<IndividualData>? groupLstGroupIndvd;
+  GroupIndivd({this.groupLstGroupIndvd});
+}
 
+class GroupIndividuallyView extends GetView<GroupIndividualController> {
+  final GroupIndivd args = Get.arguments;
+  GroupIndividuallyView({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return ScafoldedWidget(
@@ -68,9 +76,9 @@ class ConnectIndividuallyView extends GetView<ConnectIndividualController> {
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     physics: const AlwaysScrollableScrollPhysics(),
-                    itemCount: controller.myList.length,
+                    itemCount: args.groupLstGroupIndvd!.length,
                     itemBuilder: (BuildContext context, int index) {
-                      var item = controller.myList[index];
+                      var item = args.groupLstGroupIndvd![index];
                       return IndividualConnTile(
                         ontap: () {
                           controller.addtoList(

@@ -6,10 +6,12 @@ import 'package:i_connect/presentation/pages/sign_up/binding/sign_up_binding.dar
 import 'package:i_connect/presentation/pages/sign_up/sign_up_page.dart';
 import 'package:i_connect/presentation/pages/splash/binding/start_page_binding.dart';
 import 'package:i_connect/presentation/pages/splash/start_page.dart';
-import 'package:i_connect/presentation/tabs/home_tab/create_group/binding/create_group_binding.dart';
-import 'package:i_connect/presentation/tabs/home_tab/create_group/create_group_view.dart';
 import 'package:i_connect/presentation/tabs/home_tab/connect_ndividual/binding/connect_individually_binding.dart';
 import 'package:i_connect/presentation/tabs/home_tab/connect_ndividual/con_individual_view.dart';
+import 'package:i_connect/presentation/tabs/home_tab/create_group/binding/create_group_binding.dart';
+import 'package:i_connect/presentation/tabs/home_tab/create_group/create_group_view.dart';
+import 'package:i_connect/presentation/tabs/home_tab/group_individual_lst/binding/connect_individually_binding.dart';
+import 'package:i_connect/presentation/tabs/home_tab/group_individual_lst/group_individual_view.dart';
 import 'package:i_connect/presentation/tabs/home_tab/lets_connect/bindings/lets_connect_binding.dart';
 import 'package:i_connect/presentation/tabs/home_tab/lets_connect/lets_connect_view.dart';
 
@@ -60,6 +62,11 @@ class RoutingModule {
       name: Routes.indiviConnectScreen,
       page: () => const ConnectIndividuallyView(),
       binding: ConnectIndividuallyBinding(),
+    ),
+    GetPage(
+      name: Routes.groupIndiviConnectScreen,
+      page: () => GroupIndividuallyView(),
+      binding: GroupIndividuallyBinding(),
     ),
     GetPage(
       name: Routes.createGroupScreen,

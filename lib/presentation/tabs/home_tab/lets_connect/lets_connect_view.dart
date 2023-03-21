@@ -15,8 +15,17 @@ import '../../../../app/util/common_txt.dart';
 import '../../../../app/util/gradient_button.dart';
 import '../../../../app/util/util.dart';
 import '../../../../routes/app_routes.dart';
+import '../../../../temp_data/individual_list.dart';
+import '../group_individual_lst/group_individual_view.dart';
 import 'components/connnection_tile.dart';
 import 'controller/lets_connect_controller.dart';
+
+class ConnectionArguements {
+  ContactListData? contactListArguements;
+  List<IndividualData>? contactListDataArguements;
+  ConnectionArguements(
+      {this.contactListArguements, this.contactListDataArguements});
+}
 
 class LetsConnectView extends GetView<LetsConnectController> {
   final ConnectionArguements args = Get.arguments;
@@ -58,14 +67,16 @@ class LetsConnectView extends GetView<LetsConnectController> {
                                     imgURL:
                                         args.contactListArguements!.imgURL ??
                                             '',
+                                    groupInd: args.contactListDataArguements,
                                     radius: 10.w,
+                                    groupLetConnect: true,
                                   ),
                                 ),
                                 const Spacer()
                               ]))
                         : CircleAvatar(
                             radius: 10.w,
-                            backgroundImage: AssetImage(
+                            backgroundImage: NetworkImage(
                                 args.contactListArguements!.imgURL ?? ""),
                           ),
                     SizedBox(height: Get.height * 0.013),
@@ -96,7 +107,10 @@ class LetsConnectView extends GetView<LetsConnectController> {
                     itemBuilder: (BuildContext context, int index) {
                       var item = controller.myList[index];
                       return ConnectionTile(
-                        leading: StackedAvatras(imgURL: item.imgURL ?? ""),
+                        leading: StackedAvatras(
+                          imgURL: item.imgURL ?? "",
+                          groupInd: args.contactListDataArguements,
+                        ),
                         bgColor: index % 2 == 0
                             ? AppColors.lightBlack2
                             : Colors.transparent,
@@ -138,7 +152,10 @@ class LetsConnectView extends GetView<LetsConnectController> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Get.toNamed(Routes.indiviConnectScreen);
+                              Get.toNamed(Routes.groupIndiviConnectScreen,
+                                  arguments: GroupIndivd(
+                                      groupLstGroupIndvd:
+                                          args.contactListDataArguements));
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -176,9 +193,4 @@ class LetsConnectView extends GetView<LetsConnectController> {
       ),
     );
   }
-}
-
-class ConnectionArguements {
-  ContactListData? contactListArguements;
-  ConnectionArguements({this.contactListArguements});
 }

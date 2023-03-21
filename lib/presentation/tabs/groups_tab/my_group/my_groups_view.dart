@@ -6,9 +6,13 @@ import 'package:i_connect/presentation/tabs/groups_tab/my_group/components/my_gr
 import 'package:i_connect/presentation/tabs/groups_tab/my_group/controller/my_groups_controller.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/avatar_bottom_text.dart';
 import 'package:sizer/sizer.dart';
+
 import '../../../../app/util/common_appbar.dart';
 import '../../../../app/util/util.dart';
+import '../../../../routes/app_routes.dart';
 import '../../home_tab/contact_list/components/stacked_group_avatar.dart';
+import '../../home_tab/contact_list/controller/contact_list_controller.dart';
+import '../../home_tab/lets_connect/lets_connect_view.dart';
 
 class MyGroupsView extends GetView<MyGroupsController> {
   const MyGroupsView({super.key});
@@ -53,24 +57,35 @@ class MyGroupsView extends GetView<MyGroupsController> {
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   physics: const AlwaysScrollableScrollPhysics(),
-                  itemCount: controller.myList.length,
+                  itemCount: ContactListController.to.myList.length,
                   itemBuilder: (BuildContext context, int index) {
-                    var item = controller.myList[index];
-                    return MyGroupsTile(
-                      leading: StackedAvatras(imgURL: item.imgURL ?? ""),
-                      bgColor: index % 2 == 0
-                          ? AppColors.lightBlack2
-                          : Colors.transparent,
-                      label: item.title ?? "",
-                      subtitle: item.subtitle ?? '',
-                      trailing: SvgPicture.asset(
-                        Utils.getSvgFilePath(
-                          'icon-connect',
-                        ),
-                        color: AppColors.white.withOpacity(0.6),
-                      ),
-                      ontap: () {},
-                    );
+                    var item = ContactListController.to.myList[index];
+                    return item.isGroup!
+                        ? MyGroupsTile(
+                            leading: StackedAvatras(
+                              imgURL: item.imgURL ?? "",
+                              groupInd: ContactListController.to.grouplst,
+                            ),
+                            bgColor: index % 2 == 0
+                                ? AppColors.lightBlack2
+                                : Colors.transparent,
+                            label: item.title ?? "",
+                            subtitle: item.subtitle ?? '',
+                            trailing: SvgPicture.asset(
+                              Utils.getSvgFilePath(
+                                'icon-connect',
+                              ),
+                              color: AppColors.white.withOpacity(0.6),
+                            ),
+                            ontap: () {
+                              Get.toNamed(Routes.letsConnectScreen,
+                                  arguments: ConnectionArguements(
+                                      contactListArguements: item,
+                                      contactListDataArguements:
+                                          ContactListController.to.grouplst));
+                            },
+                          )
+                        : const SizedBox();
                   },
                 ),
               ),

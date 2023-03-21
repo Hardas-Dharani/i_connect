@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:i_connect/app/config/app_colors.dart';
 import 'package:i_connect/app/util/common_appbar.dart';
-import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/avatar_bottom_text.dart';
 import 'package:i_connect/app/util/common_txt.dart';
+import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/avatar_bottom_text.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/components/stacked_group_avatar.dart';
 import 'package:i_connect/presentation/tabs/home_tab/contact_list/controller/contact_list_controller.dart';
 import 'package:i_connect/presentation/tabs/home_tab/lets_connect/lets_connect_view.dart';
@@ -90,16 +90,19 @@ class ContactListView extends GetView<ContactListController> {
                           ontap: () {
                             Get.toNamed(Routes.letsConnectScreen,
                                 arguments: ConnectionArguements(
-                                  contactListArguements: item,
-                                ));
+                                    contactListArguements: item,
+                                    contactListDataArguements:
+                                        controller.grouplst));
                           },
                           leading: item.isGroup == false
                               ? CircleAvatar(
                                   radius: 6.w,
                                   backgroundImage:
-                                      AssetImage(item.imgURL ?? ""),
+                                      NetworkImage(item.imgURL ?? ""),
                                 )
-                              : StackedAvatras(imgURL: item.imgURL ?? ""),
+                              : StackedAvatras(
+                                  imgURL: item.imgURL ?? "",
+                                  groupInd: controller.grouplst),
                           bgColor: index % 2 == 0
                               ? AppColors.lightBlack2
                               : Colors.transparent,

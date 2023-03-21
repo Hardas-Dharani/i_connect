@@ -83,7 +83,10 @@ class SearchView extends GetView<SearchViewController> {
                                 radius: 6.w,
                                 backgroundImage: AssetImage(item.imgURL ?? ""),
                               )
-                            : StackedAvatras(imgURL: item.imgURL ?? ""),
+                            : StackedAvatras(
+                                imgURL: item.imgURL ?? "",
+                                groupInd: const [],
+                              ),
                         bgColor: index % 2 == 0
                             ? AppColors.lightBlack2
                             : Colors.transparent,
