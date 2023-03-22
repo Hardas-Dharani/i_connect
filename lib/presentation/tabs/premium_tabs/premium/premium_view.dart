@@ -5,9 +5,10 @@ import 'package:i_connect/app/util/common_txt.dart';
 import 'package:i_connect/app/util/gradient_button.dart';
 import 'package:i_connect/presentation/tabs/premium_tabs/premium/components/premium_plan_card.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../../../app/util/common_appbar.dart';
 import 'components/check_text.dart';
 import 'controller/premium_view_controller.dart';
-import '../../../../app/util/common_appbar.dart';
 
 class PremiumView extends GetView<PremiumViewController> {
   const PremiumView({super.key});
@@ -33,7 +34,7 @@ class PremiumView extends GetView<PremiumViewController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CommonText(
-                        text: 'Free Trial',
+                        text: 'FREE TRIAL',
                         color: AppColors.white,
                         fontSize: 16,
                         weight: FontWeight.w400,
@@ -50,7 +51,8 @@ class PremiumView extends GetView<PremiumViewController> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
@@ -77,7 +79,7 @@ class PremiumView extends GetView<PremiumViewController> {
                   padding: const EdgeInsets.only(left: 24, right: 60),
                   alignment: Alignment.centerLeft,
                   child: CommonText(
-                    text: 'Pick Your Premium',
+                    text: 'PICK YOUR PREMIUM',
                     color: AppColors.white,
                     fontSize: 16,
                     weight: FontWeight.w400,
@@ -106,6 +108,9 @@ class PremiumView extends GetView<PremiumViewController> {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 50,
+                )
               ],
             ),
           ),

@@ -4,11 +4,11 @@ import '../../../../../app/config/app_colors.dart';
 import '../../../../../app/util/common_txt.dart';
 
 class CheckText extends StatelessWidget {
+  final String text;
   const CheckText({
     required this.text,
     Key? key,
   }) : super(key: key);
-  final String text;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,7 +17,7 @@ class CheckText extends StatelessWidget {
           flex: 1,
           child: Icon(
             Icons.check,
-            color: AppColors.white.withOpacity(0.7),
+            color: AppColors.green,
             size: 27,
           ),
         ),
@@ -26,7 +26,7 @@ class CheckText extends StatelessWidget {
           flex: 3,
           child: CommonText(
             text: text,
-            color: AppColors.white.withOpacity(0.7),
+            color: AppColors.white,
             fontSize: 18,
             weight: FontWeight.w400,
           ),

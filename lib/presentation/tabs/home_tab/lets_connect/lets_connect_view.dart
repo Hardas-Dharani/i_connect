@@ -132,7 +132,7 @@ class LetsConnectView extends GetView<LetsConnectController> {
                   ),
                 ),
               ),
-              SizedBox(height: Get.height * 0.025),
+              // SizedBox(height: Get.height * 0.015),
               args.contactListArguements!.isGroup == true
                   ? Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -186,7 +186,10 @@ class LetsConnectView extends GetView<LetsConnectController> {
                         color: AppColors.lightBlack,
                         fontSize: 16,
                       ),
-                    )
+                    ),
+              const SizedBox(
+                height: 20,
+              )
             ],
           ),
         ),

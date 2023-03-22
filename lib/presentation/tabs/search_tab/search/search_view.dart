@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:i_connect/app/extensions/color.dart';
 import 'package:i_connect/presentation/tabs/search_tab/search/controller/search_view_controller.dart';
 import 'package:sizer/sizer.dart';
 
@@ -46,20 +47,22 @@ class SearchView extends GetView<SearchViewController> {
                   //   }
                   //   return null;
                   // },
-                  cursorColor: AppColors.green,
+                  cursorColor: HexColor('6B6D7B'),
                   decoration: InputDecoration(
-                    suffixIcon: IconButton(
+                    // prefixIcon: ,
+                    prefixIcon: IconButton(
                       icon: Icon(
                         Icons.search,
-                        color: AppColors.green,
+                        color: HexColor('6B6D7B'),
                       ),
                       onPressed: () {},
                     ),
                     border: InputBorder.none,
                     hintStyle: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w300,
-                        color: AppColors.green.withOpacity(0.7)),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w300,
+                      color: HexColor('6B6D7B'),
+                    ),
                     hintText: "Search ",
                   ),
                 ),

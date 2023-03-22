@@ -38,14 +38,17 @@ class MyGroupsView extends GetView<MyGroupsController> {
               child: AvatarWithLabel(
                 avatar: CircleAvatar(
                     backgroundColor: AppColors.lightBlack2,
-                    radius: 8.w,
+                    radius: 10.w,
                     child: SvgPicture.asset(
+                      width: 35,
                       Utils.getSvgFilePath('icon-group-add'),
                       color: AppColors.green.withOpacity(0.6),
                     )),
-                label: 'add group',
+                label: 'Add Group',
                 labelColor: AppColors.white.withOpacity(0.6),
-                press: () {},
+                press: () {
+                  Get.toNamed(Routes.createGroupScreen);
+                },
               ),
             ),
             SizedBox(height: Get.height * 0.02),

@@ -41,14 +41,15 @@ class ContactListView extends GetView<ContactListController> {
                 AvatarWithLabel(
                   avatar: CircleAvatar(
                     backgroundColor: AppColors.lightBlack2,
-                    radius: 8.w,
-                    child: Icon(
-                      CupertinoIcons.person_add,
-                      color: AppColors.green.withOpacity(0.6),
-                      size: 9.w,
-                    ),
+                    radius: 10.w,
+                    child: SvgPicture.asset(
+                        width: 36,
+                        Utils.getSvgFilePath('icon-person-add'),
+                        color: AppColors.green.withOpacity(0.6),
+                        fit: BoxFit.contain,
+                      )
                   ),
-                  label: 'add individual',
+                  label: 'Add Individual',
                   labelColor: AppColors.white.withOpacity(0.6),
                   press: () {
                     Get.toNamed(Routes.indiviConnectScreen);
@@ -58,13 +59,14 @@ class ContactListView extends GetView<ContactListController> {
                 AvatarWithLabel(
                   avatar: CircleAvatar(
                       backgroundColor: AppColors.lightBlack2,
-                      radius: 8.w,
+                      radius: 10.w,
                       child: SvgPicture.asset(
+                        width: 36,
                         Utils.getSvgFilePath('icon-group-add'),
                         color: AppColors.green.withOpacity(0.6),
                         fit: BoxFit.contain,
                       )),
-                  label: 'add groups',
+                  label: 'Add Group',
                   labelColor: AppColors.white.withOpacity(0.6),
                   press: () {
                     Get.toNamed(Routes.createGroupScreen);

@@ -26,6 +26,21 @@ class CustomBottomNavBar extends GetView<ApplicationsController> {
           controller.changeTabIndex(index);
           // controller.onBottomBarItemTap(index);
           controller.selectedNavIndex.value = TabType.values[index];
+          // switch (index) {
+          //   case 0:
+          //     const ContactListView();
+          //     break;
+          //   case 1:
+          // const MyGroupsView();
+          //     break;
+          //   case 2:
+          //     const SearchView();
+          //     break;
+          //   case 3:
+          //     const PremiumView();
+          //     break;
+          //   default:
+          // }
         },
         showSelectedLabels: true,
         showUnselectedLabels: true,

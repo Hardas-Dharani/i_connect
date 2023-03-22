@@ -1,19 +1,62 @@
 import 'package:flutter/cupertino.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../config/app_colors.dart';
+import '../util/util.dart';
 
 enum TabType { home, myGroups, search, premium }
 
 extension TabItem on TabType {
-  Icon get icon {
+  BottomNavigationBarItem get bottomNavigationBarItem {
+    return BottomNavigationBarItem(
+      label: title,
+    
+      icon: icon,
+    );
+  }
+
+  Widget get icon {
     switch (this) {
       case TabType.home:
-        return const Icon(CupertinoIcons.home, size: 25);
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SvgPicture.asset(
+            width: 35,
+            Utils.getSvgFilePath('home'),
+            color: AppColors.green.withOpacity(0.6),
+            fit: BoxFit.contain,
+          ),
+        );
       case TabType.myGroups:
-        return const Icon(CupertinoIcons.group, size: 25);
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SvgPicture.asset(
+            width: 35,
+            Utils.getSvgFilePath('group'),
+            color: AppColors.green.withOpacity(0.6),
+            fit: BoxFit.contain,
+          ),
+        );
       case TabType.search:
-        return const Icon(CupertinoIcons.search, size: 25);
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SvgPicture.asset(
+            width: 35,
+            Utils.getSvgFilePath('search'),
+            color: AppColors.green.withOpacity(0.6),
+            fit: BoxFit.contain,
+          ),
+        );
       case TabType.premium:
-        return const Icon(FontAwesomeIcons.crown, size: 25);
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SvgPicture.asset(
+            width: 35,
+            Utils.getSvgFilePath('premium'),
+            color: AppColors.green.withOpacity(0.6),
+            fit: BoxFit.contain,
+          ),
+        );
     }
   }
 
@@ -28,12 +71,5 @@ extension TabItem on TabType {
       case TabType.premium:
         return "Premium";
     }
-  }
-
-  BottomNavigationBarItem get bottomNavigationBarItem {
-    return BottomNavigationBarItem(
-      label: title,
-      icon: icon,
-    );
   }
 }

@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../../app/config/app_colors.dart';
 import '../../../../../app/util/common_txt.dart';
 import '../../../../../app/util/gradient_button.dart';
 
 class PremiumPlanCArd extends StatelessWidget {
+  final Gradient gradient;
+  final String title;
+  final String price;
+  final String timePeriod;
+  final String description;
+  final Function()? ontap;
   const PremiumPlanCArd({
     required this.gradient,
     required this.title,
@@ -14,12 +21,6 @@ class PremiumPlanCArd extends StatelessWidget {
     this.ontap,
     Key? key,
   }) : super(key: key);
-  final Gradient gradient;
-  final String title;
-  final String price;
-  final String timePeriod;
-  final String description;
-  final Function()? ontap;
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +91,9 @@ class PremiumPlanCArd extends StatelessWidget {
                 LinearGradient(colors: [AppColors.white, AppColors.white]),
             child: CommonText(
               text: 'BUY NOW',
-              color: AppColors.lightBlack,
+              color: AppColors.lightBlack2,
               fontSize: 18,
-              weight: FontWeight.w400,
+              weight: FontWeight.w500,
             ),
           )
         ],
