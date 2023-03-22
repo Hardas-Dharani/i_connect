@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -40,15 +39,14 @@ class ContactListView extends GetView<ContactListController> {
               children: [
                 AvatarWithLabel(
                   avatar: CircleAvatar(
-                    backgroundColor: AppColors.lightBlack2,
-                    radius: 10.w,
-                    child: SvgPicture.asset(
+                      backgroundColor: AppColors.lightBlack2,
+                      radius: 10.w,
+                      child: SvgPicture.asset(
                         width: 36,
                         Utils.getSvgFilePath('icon-person-add'),
                         color: AppColors.green.withOpacity(0.6),
                         fit: BoxFit.contain,
-                      )
-                  ),
+                      )),
                   label: 'Add Individual',
                   labelColor: AppColors.white.withOpacity(0.6),
                   press: () {
@@ -78,7 +76,7 @@ class ContactListView extends GetView<ContactListController> {
             Stack(
               children: [
                 SizedBox(
-                  height: 62.h,
+                  height: 56.h,
                   child: Obx(
                     () => ListView.builder(
                       scrollDirection: Axis.vertical,
